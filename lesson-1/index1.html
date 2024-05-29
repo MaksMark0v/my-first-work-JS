@@ -9,6 +9,44 @@
 </head>
 
 <body>
+    <!-- Підключення зовнішнього файлу скрипта з кодом за абсолютним шляхом (з кореня сайту). -->
+    <!-- <script src="/path/to/script.js"></script> -->
+
+    <!-- Можна вказати і повний URL, наприклад: -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script> -->
+
+    <script>
+        console.log("Hello world");
+      
+        // task 1
+        let x=60;
+        let y=77;
+        let z=10;
+        let n=99;
+        let max=x;
+        if (y>max){
+            max=y;
+        }
+        if (z>max){
+            max=z;
+        }
+        if (n>max){
+            max=n;
+        }
+        console.log("Max number",max);
+        
+        // task 2
+        let a=10;
+        let b=6;
+        let result = 0;
+        if(a%2 ===0){
+            result = a*b;
+        } 
+        else {
+            result = a+b;
+        }
+        console.log("Result",result);
+    </script>
 
 </body>
 
