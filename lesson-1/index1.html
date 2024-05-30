@@ -17,6 +17,9 @@
 
     <p id="demo"></p>
     <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
 
     <script>
         const PI = 3.14159265359;
@@ -24,39 +27,44 @@
         console.log(PI);
 
         let test1 = "Hello world";
-        console.log("test1",test1);
+        console.log("test1", test1);
         alert(test1);
 
         // let test2 = prompt("What is your name?");
         // alert(`hello ${test2} !`);
 
-        let age =prompt("How old are you?");
-        let firstName =prompt("What is your name?");
-        let middleName =prompt("What is your middlename?");
-        let lastName =prompt("What is your lastName?");
+        let age = prompt("How old are you?");
+        let firstName = prompt("What is your name?");
+        let middleName = prompt("What is your middlename?");
+        let lastName = prompt("What is your lastName?");
         alert(`hello ${firstName} ${middleName} ${lastName},${age} year's old`);
         document.write(`${firstName} ${middleName} ${lastName},${age} year's old`);
 
-        let a=10;
-        let b="100";
-        let c=true;
+        let a = 10;
+        let b = "100";
+        let c = true;
         document.getElementById("demo").innerHTML =
-        typeof a  + "<br>" +
-        typeof b + "<br>" +
-        typeof c + "<br>"  
+            typeof a + "<br>" +
+            typeof b + "<br>" +
+            typeof c + "<br>"
         console.log(typeof a, typeof b, typeof c,);
 
-        let x1=5;
-        document.getElementById("demo1").innerHTML = (x1 < 6) ;
+        let x1 = 5;
+        document.getElementById("demo1").innerHTML = 
+        (x1 < 6)+"<br>"+
+        (x1==6)+"<br>"+
+        (x1>6)+"<br>"+
+        (x1*2<6)
         typeof x1;
-        document.getElementById("demo1").innerHTML =  (x1==6) ;
-        typeof x1;
-        document.getElementById("demo1").innerHTML =  (x1>6);
-        typeof x1;
-        document.getElementById("demo1").innerHTML = (x1*2<6);
-        typeof x1;
+        // document.getElementById("demo1").innerHTML =  (x1==6) ;
+        // typeof x1;
+        // document.getElementById("demo1").innerHTML =  (x1>6);
+        // typeof x1;
+        // document.getElementById("demo1").innerHTML = (x1*2<6);
+        // typeof x1;
+       
 
-         
+
 
 
         // task 1
