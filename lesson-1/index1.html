@@ -15,6 +15,8 @@
     <!-- Можна вказати і повний URL, наприклад: -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script> -->
 
+    <p id="demo"></p>
+
     <script>
         const PI = 3.14159265359;
         alert(PI);
@@ -33,6 +35,16 @@
         let lastName =prompt("What is your lastName?");
         alert(`hello ${firstName} ${middleName} ${lastName},${age} year's old`);
         document.write(`${firstName} ${middleName} ${lastName},${age} year's old`);
+
+        let a=10;
+        let b="100";
+        let c=true;
+        document.getElementById("demo").innerHTML =
+        typeof a  + "<br>" +
+        typeof b + "<br>" +
+        typeof c + "<br>"  
+        console.log(typeof a, typeof b, typeof c,);
+         
 
 
         // task 1
@@ -53,14 +65,14 @@
         console.log("Max number", max);
 
         // task 2
-        let a = 10;
-        let b = 6;
+        let a2 = 10;
+        let b2 = 6;
         let result = 0;
-        if (a % 2 === 0) {
-            result = a * b;
+        if (a2 % 2 === 0) {
+            result = a2 * b2;
         }
         else {
-            result = a + b;
+            result = a2 + b2;
         }
         console.log("Result", result);
 
