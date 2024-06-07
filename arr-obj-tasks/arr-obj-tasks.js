@@ -8,3 +8,10 @@ const arrind = [
     "Структуроване зберігання даних"
     ];
 console.log(arrind);
+
+const book1 = {
+    title : "Da Vinci Code",
+    pageCount : "519",
+    genre : "detective novel"
+};
+console.log(book1);
