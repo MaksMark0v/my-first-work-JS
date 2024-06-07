@@ -24,6 +24,6 @@ book1.authors = [
     age : "59"
 }
 ];
-console.log(book1);
+console.log(book1.authors);
 
 
