@@ -15,3 +15,6 @@ const book1 = {
     genre : "detective novel"
 };
 console.log(book1);
+
+book1.authors = "Dan Brown";
+console.log(book1);
