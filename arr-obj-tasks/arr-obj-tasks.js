@@ -16,5 +16,14 @@ const book1 = {
 };
 console.log(book1);
 
-book1.authors = "Dan Brown";
+// book1.authors = "Dan Brown";
+
+book1.authors = [
+    {
+    name : "Dan Brown",
+    age : "59"
+}
+];
 console.log(book1);
+
+
