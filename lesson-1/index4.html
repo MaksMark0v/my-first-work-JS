@@ -10,6 +10,8 @@
 <body>
     <script>
 
+        // логічні розгалуження
+
         // 1.
         let x = 0;
         if (x != 0) {
@@ -30,7 +32,65 @@
             console.log('Невірно');
         };
 
+        // 2.
+
+        let time = 6;
+        if (time >= 0 && time < 15) {
+            console.log("Перша частина год");
+        } else if (time >= 15 && time < 30) {
+            console.log("Друга частина год");
+        } else if (time >= 30 && time < 45) {
+            console.log("Третя частина год");
+        } else if (time >= 45 && time < 60) {
+            console.log("Четверта частина год");
+        } else {
+            console.log(undefined);
+        }
+
+        // 3.
+        let day = 32;
+        if (day >= 1 && day < 11) {
+            console.log("Перша декада");
+        } else if (day >= 11 && day < 21) {
+            console.log("Друга декада");
+        } else if (day >= 21 && day < 31) {
+            console.log("Третя декада");
+        } else {
+            console.log(undefined);
+        }
+
+        // 4. 
+
+        let weekday = 7;
+        switch (weekday) {
+            case 1:
+            weekday = "Sunday";
+                break;
+            case 2:
+            weekday = "Monday";
+                break;
+            case 3:
+            weekday = "Tuesday";
+                break;
+            case 4:
+            weekday = "Wednesday";
+                break;
+            case 5:
+            weekday = "Thursday";
+                break;
+            case 6:
+            weekday = "Friday";
+                break;
+            case 7:
+            weekday = "Saturday";
+            
+        }
+        console.log(weekday);
         
+
+
+
+
 
 
 
