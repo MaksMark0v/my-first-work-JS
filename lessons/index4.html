@@ -293,7 +293,7 @@
                 modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
             }
         ];
-        
+
         for (let i = 0; i < coursesArray.length; i++) {
             let corsesDiv = document.createElement('div');
 
@@ -313,12 +313,42 @@
             corsesDiv.appendChild(titleDiv);
             corsesDiv.appendChild(monthDurationDiv);
             corsesDiv.appendChild(hourDurationDiv);
-            corsesDiv.appendChild(modulesUl);           
-            
+            corsesDiv.appendChild(modulesUl);
+
             console.log(corsesDiv);
-            
+
         };
 
+        // 13. 14. 15 .16
+        for (let i = 0; i < 10; i++) {
+            document.write('<div> Блок номер ' + (i + 1) + '</div>');
+        }
+        for (let i = 0; i < 10; i++) {
+            document.write('<div>Це блок номер ' + (i + 1) + ', індекс: ' + i + '</div>');
+        }
+
+        let k = 0;
+        while (k < 20) {
+            document.write('<h1> Заголовок номер ' + (k + 1) + ', індекс:' + k + '</h1>');
+            k++;
+        }
+
+    //   ?????????  // 17. 
+        // let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+        //  let ul1 = document.createElement('ul');
+        //  for (let i = 0; i < listOfItems.length; i++){
+        //     let ul = document.createElement('ul');
+        //     let li =document.createElement('li');
+        //     li.textContent = listOfItems[i];
+        //     ul.appendChild(li);
+        //     document.write(ul1);
+        // }            
+
+        // // // Використовуємо цикл для проходження по масиву
+        // // for (let i = 0; i < listOfItems.length; i++) {
+        // //     // Виводимо кожен елемент масиву в блок div
+        // //     document.write('<div>' + listOfItems[i] + '</div>');
+        // // }
 
 
 
