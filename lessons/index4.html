@@ -64,26 +64,26 @@
         let weekday = 7;
         switch (weekday) {
             case 1:
-            weekday = "Sunday";
+                weekday = "Sunday";
                 break;
             case 2:
-            weekday = "Monday";
+                weekday = "Monday";
                 break;
             case 3:
-            weekday = "Tuesday";
+                weekday = "Tuesday";
                 break;
             case 4:
-            weekday = "Wednesday";
+                weekday = "Wednesday";
                 break;
             case 5:
-            weekday = "Thursday";
+                weekday = "Thursday";
                 break;
             case 6:
-            weekday = "Friday";
+                weekday = "Friday";
                 break;
             case 7:
-            weekday = "Saturday";
-            
+                weekday = "Saturday";
+
         }
         console.log(weekday);
 
@@ -91,11 +91,11 @@
         let num1 = 4;
         let num2 = 44;
         if (num1 > num2) {
-            console.log( num1);
-        } else if (num1<num2) {
-            console.log (num2)
+            console.log(num1);
+        } else if (num1 < num2) {
+            console.log(num2)
         } else {
-            console.log(num1=num2);
+            console.log(num1 = num2);
         }
 
         // DOM
@@ -103,14 +103,66 @@
         // 6. 
         let iks = 0;
         if (!iks) {
-            iks = "default";            
+            iks = "default";
         }
         console.log(iks)
 
 
+        // 7.
+        let block = document.createElement('div');
+        block.classList.add('wrap', 'collapse', 'alpha', 'beta');
+        block.style.backgroundColor = 'blue';
+        block.style.border = '2px solid red';
+        block.style.width = '200px';
+        block.style.height = '200px';
+        block.style.margin = '5px';
+        document.body.appendChild(block);
+        console.log(block);
+
+        let clone = block.cloneNode(true);
+        document.body.appendChild(clone);
+        console.log(clone);
+
+        // 8. 
+        let mas = [
+            'Main',
+            'Products',
+            'About us',
+            'Contacts',];
+        let ul = document.createElement('ul');
+        ul.style.display = 'flex';
+        ul.style.listStyleType = 'none';
+        ul.style.margin = '5px';
+        ul.style.alignItems = 'center';
+        ul.style.justifyContent = 'center';
+        for (let i = 0; i < mas.length; i++) {
+            let li = document.createElement('li');
+            li.style.margin = '5px';
+            // Додаємо текст до li
+            li.textContent = mas[i];
+            // Додаємо li до ul
+            ul.appendChild(li);
+        };
+        // Додаємо ul до body
+        document.body.appendChild(ul);
+        console.log(mas);
+
+        // 9.
+        let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
 
 
-        
+
+
+
+
+
 
 
 
