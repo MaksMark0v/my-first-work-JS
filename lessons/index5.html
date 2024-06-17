@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p id="demo"></p>
 
@@ -16,40 +18,65 @@
         let S = myArea(4, 3);
         document.getElementById("demo").innerHTML = S;
 
-        function myArea(a, b){
-            return a*b ;         
+        function myArea(a, b) {
+            return a * b;
         }
-        console.log(myArea(4,5));
+        console.log(myArea(4, 5));
         console.log(S)
 
         // 2.         
-        
-        function myAreaKolo(pi, r){
-            return pi*r**2;            
-        }        
+
+        function myAreaKolo(pi, r) {
+            return pi * r ** 2;
+        }
         console.log(myAreaKolo(3.14, 2));
 
         // 3.
         const s1 = myAreaCil(10, 4);
 
-        function myAreaCil(h, r){
-            const pi =3.14;
-            const areaK = pi*r**2;
-            const areaS = 2*pi*r*h;
+        function myAreaCil(h, r) {
+            const pi = 3.14;
+            const areaK = pi * r ** 2;
+            const areaS = 2 * pi * r * h;
             return areaK + areaS;
         }
-        console.log(s1)
+        console.log(s1);
+        document.write(s1);
+
+        // 4. 
+
+        function massArr(arr) {
+            for (i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+        }
+        const mas = [1, 3, 5, 7, 9];
+        massArr(mas);
+        
+
+        // 5. 
+
+        function parTxt (text){
+            const par = document.createElement('p');
+            par.textContent = text;
+            return par
+        }
+        const textP = parTxt('якийсь текст');
+        console.log(textP);
+        document.body.appendChild(textP);
+
         
 
 
 
 
 
-       
+
 
 
 
     </script>
-    
+
 </body>
+
 </html>
