@@ -65,6 +65,35 @@
         console.log(textP);
         document.body.appendChild(textP);
 
+        // 6.
+        function ulli (text){
+            const ul = document.createElement('ul');
+            for (i = 0; i < 3; i++){
+                const li = document.createElement('li');
+                li.textContent = text;
+                ul.appendChild(li);
+            }
+            return ul;        
+        }
+        document.body.appendChild(ulli('текст елементу списку'));
+        console.log(ulli('текст елементу списку'))
+
+        // 7. 
+        function ulli2 (text, x){
+            const ul = document.createElement('ul');
+            for (i = 0; i < x; i++){
+                const li = document.createElement('li');
+                li.textContent = text;
+                ul.appendChild(li);
+            }
+            return ul;        
+        }
+        document.body.appendChild(ulli2('текст елементу списку', 10));
+        console.log(ulli2('текст елементу списку', 10))
+
+        // 8. 
+
+
         
 
 
