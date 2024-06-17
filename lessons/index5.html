@@ -6,6 +6,49 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="demo"></p>
+
+
+    <script>
+        // СТВОРЮВАТИ ФУНКЦІЇ РІЗНИХ ТИПІВ!!!
+
+        // 1. 
+        let S = myArea(4, 3);
+        document.getElementById("demo").innerHTML = S;
+
+        function myArea(a, b){
+            return a*b ;         
+        }
+        console.log(myArea(4,5));
+        console.log(S)
+
+        // 2.         
+        
+        function myAreaKolo(pi, r){
+            return pi*r**2;            
+        }        
+        console.log(myAreaKolo(3.14, 2));
+
+        // 3.
+        const s1 = myAreaCil(10, 4);
+
+        function myAreaCil(h, r){
+            const pi =3.14;
+            const areaK = pi*r**2;
+            const areaS = 2*pi*r*h;
+            return areaK + areaS;
+        }
+        console.log(s1)
+
+
+
+
+
+       
+
+
+
+    </script>
     
 </body>
 </html>
