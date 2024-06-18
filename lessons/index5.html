@@ -107,6 +107,32 @@
         document.body.appendChild(result)
 
         // 9. 
+        
+        function myObj(x) {
+            const div = document.createElement('div');
+            for (i = 0; i < x.length; i++) {
+                const p = document.createElement('p');
+                p.textContent = `id: ${x[i].id}, name: ${x[i].name}, age: ${x[i].age}`;
+                div.appendChild(p);
+            }
+            return div;
+        }
+        const myObject = [
+            { id: 1, name: 'Tom', age: 30},
+            { id: 2, name: 'Bob', age: 25},
+            { id: 3, name: 'Sam', age: 28},
+            { id: 4, name: 'Jane', age: 27},
+            { id: 5, name: 'John', age: 32},
+            { id: 6, name: 'Mary', age: 24},
+        ];
+        const resultObj = myObj(myObject);
+        console.log(resultObj);
+        document.body.appendChild(resultObj);
+
+
+        // 10.
+        
+
 
 
 
