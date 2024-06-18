@@ -52,11 +52,11 @@
         }
         const mas = [1, 3, 5, 7, 9];
         massArr(mas);
-        
+
 
         // 5. 
 
-        function parTxt (text){
+        function parTxt(text) {
             const par = document.createElement('p');
             par.textContent = text;
             return par
@@ -66,40 +66,40 @@
         document.body.appendChild(textP);
 
         // 6.
-        function ulli (text){
+        function ulli(text) {
             const ul = document.createElement('ul');
-            for (i = 0; i < 3; i++){
+            for (i = 0; i < 3; i++) {
                 const li = document.createElement('li');
                 li.textContent = text;
                 ul.appendChild(li);
             }
-            return ul;        
+            return ul;
         }
         document.body.appendChild(ulli('текст елементу списку'));
         console.log(ulli('текст елементу списку'))
 
         // 7. 
-        function ulli2 (text, x){
+        function ulli2(text, x) {
             const ul = document.createElement('ul');
-            for (i = 0; i < x; i++){
+            for (i = 0; i < x; i++) {
                 const li = document.createElement('li');
                 li.textContent = text;
                 ul.appendChild(li);
             }
-            return ul;        
+            return ul;
         }
         document.body.appendChild(ulli2('текст елементу списку', 10));
         console.log(ulli2('текст елементу списку', 10))
 
         // 8. 
-        function elem (x){ 
+        function elem(x) {
             const ul = document.createElement('ul');
-            for (i = 0; i < x.length; i++){
+            for (i = 0; i < x.length; i++) {
                 const li = document.createElement('li');
                 li.textContent = x[i];
                 ul.appendChild(li);
             }
-            return ul         
+            return ul
         }
         const elemx = [12, 'doc', true, false]
         const result = elem(elemx);
@@ -107,17 +107,6 @@
         document.body.appendChild(result)
 
         // 9. 
-        
-
-
-
-
-        
-
-
-
-
-
 
 
 
