@@ -29,7 +29,7 @@
         
         // 2. Перевести до великого регістру наступні стрінгові значення
 
-        // console.log(str.toUpperCase());
+        // console.log(str.toUpperCase()); -!!!-
 
         console.log(str1.toUpperCase());
         console.log(str2.toUpperCase());
@@ -54,6 +54,25 @@
         // str5.split(' ') <- обов’язково пробіл (видає кожний символ за стрінгу)
         let str5 = 'Ревуть воли як ясла повні';
         console.log(stringToarray(str5));
+
+        // 6. за допомоги map та !колбеку! перетворити всі об'єкти в масиві на стрінгові.
+
+        const massArr = [10, 8, -7, 55, 987, -1011, 0, 1050, 0]
+        const massArr1 = massArr.map(item => item.toString());
+        console.log(massArr1);
+        //.map(item => item.toString()) <- обов’язково пробіл (видає кожний символ за стрінгу)
+
+        // 7. створити функцію sortNums(direction), 
+        // яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в 
+        // залежності від значення аргументу direction.
+
+        const sortNums = (direction) => { return nums.sort()}
+        
+        
+        
+        let nums = [11,21,3];
+        
+        
 
 
 
