@@ -7,7 +7,60 @@
 </head>
 <body>
     <script>
+
+        // 1. довижина настипних стрінгових значень
+        let str = ['hello world', 'lorem ipsum', 'javascript is cool'];
+        console.log(str.length);
+        console.log(str[0]);
+        console.log(str[1]);
+        console.log(str[2]);
         
+        let str1 = 'Hello world';
+        console.log(str1.length);
+        console.log(str1[4]);
+
+        let str2 = 'lorem Ipsum';
+        console.log(str2.length);
+        console.log(str2[2]);
+
+        let str3 = 'javaScript is cool';
+        console.log(str3.length);
+        console.log(str3[9]);
+        
+        // 2. Перевести до великого регістру наступні стрінгові значення
+
+        // console.log(str.toUpperCase());
+
+        console.log(str1.toUpperCase());
+        console.log(str2.toUpperCase());
+        console.log(str3.toUpperCase());
+
+        // 3. Перевести до нижнього регістру наступні стрінгові значення
+        console.log(str1.toLowerCase());
+        console.log(str2.toLowerCase());
+        console.log(str3.toLowerCase());
+
+        // 4. Почистити її від зайвих пробілів.
+
+        let str4 = ' dirty string   '
+        console.log(str4.trim())
+        // .trim()-> пусті душки це пробіли + trimStart, trimEnd))
+
+
+        // 5. Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+
+        
+        const stringToarray = (str5) => {return str5.split(' ')}
+        // str5.split(' ') <- обов’язково пробіл (видає кожний символ за стрінгу)
+        let str5 = 'Ревуть воли як ясла повні';
+        console.log(stringToarray(str5));
+
+
+
+
+        
+
+
     </script>
     
 </body>
