@@ -100,8 +100,14 @@
 
         // 9. Створити функцію-валідатор для адрес електронної пошти
 
-        const validate = (eml) => {
-            
+        // let eml1 = 'someemail@gmail.com';
+
+        const valid = (eml1) => {
+            if (eml1.includes('@') && eml1.includes('.')) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         
