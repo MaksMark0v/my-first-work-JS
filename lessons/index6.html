@@ -72,7 +72,7 @@
         let nums = [11, 21, 3];
         const sortNums = (nums, direction) => {
             if (direction === 'ascascending') {
-                 // sort => (для числового сортування можна просто відняти "a" від "b" або навпаки)
+                // sort => (для числового сортування можна просто відняти "a" від "b" або навпаки)
                 return nums.sort((a, b) => a - b);
             } else if (direction === 'descendingc') {
                 return nums.sort((a, b) => b - a);
@@ -100,17 +100,24 @@
 
         // 9. Створити функцію-валідатор для адрес електронної пошти
 
-        // let eml1 = 'someemail@gmail.com';
-
         const valid = (eml1) => {
             if (eml1.includes('@') && eml1.includes('.')) {
-                return true;
-            } else {
-                return false;
+                const index1 = eml1.indexOf('@');
+                const index2 = eml1.indexOf('.');
+                if (index2 - index1 > 2) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
+            return false;
         }
 
-        
+        let eml1 = 'so@em..co@m';
+        console.log(valid(eml1));
+
+
+
 
 
 
