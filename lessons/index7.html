@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        
+
+        // 1. Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+        // створити пустий масив, наповнити його 10 об'єктами new User(....)
+
+        // Ім’я функції-конструктора повинно починатися з великої літери.
+        // Функції-конструктори повинні виконуватися лише з оператором "new"
+
+        function User(id, name, surname, email, phone) {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.phone = phone;
+        };
+        const usersArr = [];
+        for (let i = 1; i <= 10; i++){
+            const newUser = new User(`id${i}`, `name${i}`, `surname${i}`,  `email${i}`, `phone${i}`);
+            usersArr.push(newUser);
+        }
+        console.log(usersArr);
+
+
     </script>
 
 </body>
+
 </html>
