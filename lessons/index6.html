@@ -102,9 +102,9 @@
 
         const valid = (eml1) => {
             if (eml1.includes('@') && eml1.includes('.')) {
-                const index1 = eml1.indexOf('@');
-                const index2 = eml1.indexOf('.');
-                if (index2 - index1 >= 2 && index1 !== 0) {
+                const ravlik = eml1.indexOf('@');
+                const dot = eml1.indexOf('.');
+                if (dot - ravlik >= 2 && index1 !== 0) {
                     return true;
                 } else {
                     return false;
@@ -112,7 +112,7 @@
             }
             return false;
         }
-        
+
         let eml1 = 'someemail@gmail.com';
         console.log(valid(eml1));
 
