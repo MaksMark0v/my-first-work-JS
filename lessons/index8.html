@@ -32,15 +32,119 @@
         // 2. Є масив:
         // ['Main','Products','About us','Contacts']
         // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li) 
-        
-        let myArr = ['Main', 'Products', 'About us','Contacts'];
-        let ul = document.createElement('ul');
-        for (let i = 0; i < myArr.length; i++){
+
+        let myArr = ['Main', 'Products', 'About us', 'Contacts'];
+        let ul = document.createElement('ul');    //ств. ul
+        for (let i = 0; i < myArr.length; i++) {
             let li = document.createElement('li');
             li.textContent = myArr[i];
             ul.appendChild(li);
-        }
+        } // проходимо по масиву і та ств. li для кожного елемен.
         document.body.appendChild(ul);
+
+        // innerHTML
+        let myArrInner = ['Main', 'Products', 'About us', 'Contacts'];
+        let ulInner = document.createElement('ul');
+        for (let i = 0; i < myArrInner.length; i++) {
+            ulInner.innerHTML += `<li>${myArrInner[i]}</li>`;
+        };
+        document.body.appendChild(ulInner);
+
+        // 3. Є масив
+        // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
+        // Завдання робити через цикли.
+
+        let coursesAndDurationArray = [
+            { title: 'JavaScript Complex', monthDuration: 5 },
+            { title: 'Java Complex', monthDuration: 6 },
+            { title: 'Python Complex', monthDuration: 6 },
+            { title: 'QA Complex', monthDuration: 4 },
+            { title: 'FullStack', monthDuration: 7 },
+            { title: 'Frontend', monthDuration: 4 }
+        ];
+        for (let i = 0; i < coursesAndDurationArray.length; i++) {
+            let blockMas = document.createElement('div');
+            blockMas.textContent = `title: ${coursesAndDurationArray[i].title},  monthsDuration: ${coursesAndDurationArray[i].monthDuration}`;
+            console.log(blockMas)
+            document.body.appendChild(blockMas)
+        };
+
+        // 4. За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, 
+        // та <p class='description'> з monthDuration елементу.
+        // Завдання робити через цикли.
+
+        for (let i = 0; i < coursesAndDurationArray.length; i++) {
+            let blockClass = document.createElement('div');
+            blockClass.className = 'item';
+            let h1 = document.createElement('h1');
+            h1.className = 'heading';
+            let par = document.createElement('p');
+            par.className = 'description';
+            h1.textContent = coursesAndDurationArray[i].title;
+            par.textContent = coursesAndDurationArray[i].monthDuration;
+            blockClass.appendChild(h1);
+            blockClass.appendChild(par);
+            console.log(blockClass);
+            document.body.appendChild(blockClass);
+        }
+
+        // 5.  масив simpsons, котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
+        // Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
+        // Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
+
+        let simpsons = [
+            {
+                name: 'Bart',
+                surname: 'Simpson',
+                age: 10,
+                info: 'Бартолом\'ю ДжоДжо «Барт» Сімпсон (англ. Bartholomew JoJo «Bart» Simpson) — один із головних героїв мультиплікаційного серіалу Сімпсони. Барт — найстарша дитина Гомера і Мардж Сімпсон. У нього також є дві молодші сестри — Ліса і Меґґі. Барт є втіленням образу бешкетника та посереднього учня у школі. Разом зі своїм батьком Барт є одним із найвідоміших персонажів у цьому серіалі.',
+                photo: 'https://upload.wikimedia.org/wikipedia/uk/a/aa/Bart_simpson.png'
+            },
+            {
+                name: 'Homer',
+                surname: 'Simpson',
+                age: 40,
+                info: 'Гомер Джей Сімпсон (англ. Homer Jay Simpson) — один із головних героїв мультсеріалу «Сімпсони». Гомер — грубий і неввічливий батько родини, він має очевидні вади: товстий, лисий і не дуже розумний. Нерідко він поводиться як блазень, абсурдно, егоїстично і нетактовно, але все ж лишається симпатичним.',
+                photo: 'http://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'
+            },
+            {
+                name: 'Marge',
+                surname: 'Simpson',
+                age: 38,
+                info: 'Ма́рджори Жакли́н «Мардж» Си́мпсон (в девичестве Бувье́) (англ. Marjorie Jacqueline «Marge» Simpson) — постоянный персонаж мультипликационного сериала «Симпсоны», её озвучивает Джулия Кавнер. Обычно носит зелёное платье, красные балетки, на шее — ожерелье из искусственного жемчуга и ездит на оранжевом универсале. У неё шикарные синие волосы, которые она обычно собирает в очень высокую причёску. Глаза цвета ореха (19s6e). Основное занятие — домохозяйка, большую часть времени проводит в заботе о доме, детях и Гомере. Образ Мардж копирует стереотип провинциальной американской домохозяйки 50-х годов. Мардж — единственный член семьи, посещающий церковь добровольно. Старается поддерживать нравственность не только своей семьи, но и всего города. Отлично готовит, особенно славятся её свиные отбивные и зефир. Любимое блюдо — лапша с маслом.',
+                photo: 'https://upload.wikimedia.org/wikipedia/ru/0/0b/Marge_Simpson.png'
+            },
+            {
+                name: 'Lisa',
+                surname: 'Simpson',
+                age: 9,
+                info: 'Ли́за Мари́ Си́мпсон (англ. Lisa Marie Simpson) — героиня мультипликационного сериала «Симпсоны». Средний ребёнок в семье, восьмилетняя девочка, выделяющаяся среди остальных Симпсонов прежде всего своим умом и рассудительностью.',
+                photo: 'https://upload.wikimedia.org/wikipedia/ru/e/ec/Lisa_Simpson.png'
+            },
+            {
+                name: 'Maggie',
+                surname: 'Simpson',
+                age: 1,
+                info: 'Ма́ргарет Эвелин «Мэ́гги» Си́мпсон (англ. Margaret Evelyn “Maggie” Simpson) — персонаж мультсериала «Симпсоны». Впервые появилась на телевидении в шоу Трейси Ульман, в короткометражке Good Night (англ.)русск. 19 апреля 1987 года. Мэгги была придумана и разработана карикатуристом Мэттом Грейнингом, пока он ждал встречи с Джеймсом Л. Бруксом. Названа в честь младшей сестры Грейнинга. После появления в шоу Трейси Ульман, через три года семья Симпсонов получила собственный сериал на телеканале Fox, дебют произошёл 17 декабря 1989 года.',
+                photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
+            },
+        ];
+        for (let i = 0; i < simpsons.length; i++) {
+            let divSim = document.createElement('div');
+            divSim.className = 'member';
+            divSim.textContent =  `name: ${simpsons[i].name}, surname: ${simpsons[i].surname}, age: ${simpsons[i].age}, information: ${simpsons[i].info}, photo: ${simpsons[i].photo}`;
+            document.body.appendChild(divSim);
+            let imgSim = document.createElement('img');
+            imgSim.src = simpsons[i].photo;
+            divSim.appendChild(imgSim);
+            divSim.style.border = '1px solid green';
+            divSim.style.margin = '10px';
+        };
+        
+
+
+
+
 
 
 
