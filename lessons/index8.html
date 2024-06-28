@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
-    <script>
 
+<body>
+
+    <script>
+        // 1. - створити блок,
+        // - додати йому класи wrap, collapse, alpha, beta
+        // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
+        // - додати цей блок в body.
+        // - клонувати його повністю, та додати клон в body.
+
+        let block = document.createElement('div');
+        block.className = 'wrap', 'collapse', 'alpha', 'beta';
+        block.style.backgroundColor = 'red';
+        block.style.color = 'white';
+        block.style.fontSize = '20px';
+        block.style.border = '3px solid black'
+        block.style.width = '200px';
+        block.style.height = '200px';
+        block.style.margin = '5px';
+        document.body.appendChild(block);
+        let clone = block.cloneNode(true);
+        document.body.appendChild(clone);
+
+        // 2. Є масив:
+        // ['Main','Products','About us','Contacts']
+        // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li) 
         
+        let myArr = ['Main', 'Products', 'About us','Contacts'];
+        let ul = document.createElement('ul');
+        for (let i = 0; i < myArr.length; i++){
+            let li = document.createElement('li');
+            li.textContent = myArr[i];
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+
+
+
+
     </script>
 </body>
+
 </html>
