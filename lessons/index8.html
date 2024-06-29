@@ -217,24 +217,37 @@
             }
         ];
         for ( const course of coursesArray ) {
-            const courseDiv = document.createElement('div');
+            const courseDiv = document.createElement('div');//загальний блок
             document.body.appendChild( courseDiv );
             courseDiv.style.border = '2px solid red';
             courseDiv.style.width = '100%';
-            courseDiv.style.margin = '10px';
+            courseDiv.style.margin = '10px'; 
 
-            const titleEle = document.createElement('div');
+            const titleEle = document.createElement('div'); //блок для title
             titleEle.textContent = course.title;
             courseDiv.appendChild( titleEle);
             titleEle.style.border = '1px solid blue';
             titleEle.style.margin = '5px';
             titleEle.style.textAlign = 'center';
 
-            const monthDurationEle = document.createElement('div');
-            monthDurationEle.textContent = ` Duration ${course.monthDuration} months, ${course.hourDuration} hours`;
+            const monthDurationEle = document.createElement('div'); 
+            monthDurationEle.style.display = 'flex';
+
+            const monthDur = document.createElement('div');
+            monthDur.textContent = course.monthDuration;
+            monthDurationEle.appendChild( monthDur)
+            monthDur.style.border = '1px solid blue';
+
+            const hourDur = document.createElement('div');
+            hourDur.textContent = course.hourDuration;
+            monthDurationEle.appendChild( hourDur);    
+            hourDur.style.border = '1px solid blue';
+
+            // monthDurationEle.textContent = monthDur.textContent + ' ' + hourDur.textContent;
+
             courseDiv.appendChild( monthDurationEle );
-            monthDurationEle.style.border = '1px solid blue';
-            monthDurationEle.style.margin = '5px';
+            // monthDurationEle.style.border = '1px solid blue';
+            // monthDurationEle.style.margin = '5px';
             const moduleList = document.createElement('ul');
             moduleList.style.border = '1px solid blue';
             moduleList.style.margin = '5px';
@@ -242,6 +255,7 @@
                 const moduleLi = document.createElement('li');
                 moduleLi.textContent = module;
                 moduleList.appendChild( moduleLi );
+                moduleLi.style.listStyle = 'none';
             }
             courseDiv.appendChild( moduleList );
             console.log(courseDiv);            
