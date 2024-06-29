@@ -132,15 +132,121 @@
         for (let i = 0; i < simpsons.length; i++) {
             let divSim = document.createElement('div');
             divSim.className = 'member';
-            divSim.textContent =  `name: ${simpsons[i].name}, surname: ${simpsons[i].surname}, age: ${simpsons[i].age}, information: ${simpsons[i].info}, photo: ${simpsons[i].photo}`;
+            divSim.textContent = `name: ${simpsons[i].name}, surname: ${simpsons[i].surname}, age: ${simpsons[i].age}, information: ${simpsons[i].info}, photo: ${simpsons[i].photo}`;
             document.body.appendChild(divSim);
             let imgSim = document.createElement('img');
             imgSim.src = simpsons[i].photo;
             divSim.appendChild(imgSim);
             divSim.style.border = '1px solid green';
             divSim.style.margin = '10px';
+            console.log(divSim);
         };
-        
+
+        // 6. Цикл в циклі
+        // - Є масив coursesArray котрий лежить в arrays.js (на цей момент ти вже знаєте де він знаходиться)
+        // Створити для кожного елементу масиву свій блок, блок розділити блоками,
+        //  в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+
+        let coursesArray = [
+            {
+                title: 'JavaScript Complex',
+                monthDuration: 5,
+                hourDuration: 909,
+                modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+            },
+            {
+                title: 'Java Complex',
+                monthDuration: 6,
+                hourDuration: 909,
+                modules: ['html',
+                    'css',
+                    'js',
+                    'mysql',
+                    'mongodb',
+                    'angular',
+                    'aws',
+                    'docker',
+                    'git',
+                    'java core',
+                    'java advanced']
+            },
+            {
+                title: 'Python Complex',
+                monthDuration: 6,
+                hourDuration: 909,
+                modules: ['html',
+                    'css',
+                    'js',
+                    'mysql',
+                    'mongodb',
+                    'angular',
+                    'aws',
+                    'docker',
+                    'python core',
+                    'python advanced']
+            },
+            {
+                title: 'QA Complex',
+                monthDuration: 4,
+                hourDuration: 909,
+                modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+            },
+            {
+                title: 'FullStack',
+                monthDuration: 7,
+                hourDuration: 909,
+                modules: ['html',
+                    'css',
+                    'js',
+                    'mysql',
+                    'mongodb',
+                    'react',
+                    'angular',
+                    'aws',
+                    'docker',
+                    'git',
+                    'node.js',
+                    'python',
+                    'java']
+            },
+            {
+                title: 'Frontend',
+                monthDuration: 4,
+                hourDuration: 909,
+                modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+            }
+        ];
+        for ( const course of coursesArray ) {
+            const courseDiv = document.createElement('div');
+            document.body.appendChild( courseDiv );
+            courseDiv.style.border = '2px solid red';
+            courseDiv.style.width = '100%';
+            courseDiv.style.margin = '10px';
+
+            const titleEle = document.createElement('h2');
+            titleEle.textContent = course.title;
+            courseDiv.appendChild( titleEle);
+            titleEle.style.border = '1px solid blue';
+            titleEle.style.margin = '5px';
+
+            const monthDurationEle = document.createElement('div');
+            monthDurationEle.textContent = ` Duration ${course.monthDuration} months, ${course.hourDuration} hours`;
+            courseDiv.appendChild( monthDurationEle );
+            monthDurationEle.style.border = '1px solid blue';
+            monthDurationEle.style.margin = '5px';
+            const moduleList = document.createElement('ul');
+            moduleList.style.border = '1px solid blue';
+            moduleList.style.margin = '5px';
+            for ( const module of course.modules ) {
+                const moduleLi = document.createElement('li');
+                moduleLi.textContent = module;
+                moduleList.appendChild( moduleLi );
+            }
+            courseDiv.appendChild( moduleList );
+            console.log(courseDiv);            
+        };
+
+
 
 
 
