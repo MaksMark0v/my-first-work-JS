@@ -234,16 +234,23 @@
             monthDurationEle.style.display = 'flex';
             monthDurationEle.style.flexDirection = 'row';
             monthDurationEle.style.justifyContent = 'space-around';
+        
 
             const monthDur = document.createElement('div');
             monthDur.textContent = course.monthDuration;
             monthDurationEle.appendChild( monthDur)
             monthDur.style.border = '1px solid blue';
+            monthDur.style.width = '100%';
+            monthDur.style.margin = '5px';
+            monthDur.style.textAlign = 'center';
 
             const hourDur = document.createElement('div');
             hourDur.textContent = course.hourDuration;
             monthDurationEle.appendChild( hourDur);    
             hourDur.style.border = '1px solid blue';
+            hourDur.style.width = '100%';
+            hourDur.style.margin = '5px';
+            hourDur.style.textAlign = 'center';
 
             // monthDurationEle.textContent = monthDur.textContent + ' ' + hourDur.textContent;
 
