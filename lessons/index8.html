@@ -232,6 +232,8 @@
 
             const monthDurationEle = document.createElement('div'); 
             monthDurationEle.style.display = 'flex';
+            monthDurationEle.style.flexDirection = 'row';
+            monthDurationEle.style.justifyContent = 'space-around';
 
             const monthDur = document.createElement('div');
             monthDur.textContent = course.monthDuration;
