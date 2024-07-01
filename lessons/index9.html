@@ -7,6 +7,7 @@
 </head>
 <body>
     
+    <div id = numb> 0 </div>
 
     <script>
         // 1.  Стоврити форму з трьома полями для name,sruname,age та кнопкою.
@@ -73,7 +74,24 @@
             const divForm = document.createElement('div');
             divForm.textContent = `Ім’я:  ${objForm.name}, Прізвище: ${objForm.surname}, Вік: ${objForm.age}`;
             document.body.appendChild(divForm);
-        })           
+        });
+        
+        // 2. є сторінка, на якій є блок, я кому знаходиьтся цифра.
+        // написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+
+        const numb = document.getElementById('numb');
+
+        let count = 0;
+        window.addEventListener('load', function() {
+            count++;
+            numb.textContent = count;
+            console.log(count);
+
+        });
+
+
+
+        
 
 
         
