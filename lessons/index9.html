@@ -9,7 +9,73 @@
     
 
     <script>
-        
+        // 1.  Стоврити форму з трьома полями для name,sruname,age та кнопкою.
+        //  При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. 
+        // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+
+        const form = document.createElement('form');
+        form.id = 'form';
+        document.body.appendChild(form);
+
+        // ств. поле "Ім’я"
+
+        const name = document.createElement('input');
+        name.type = 'text';
+        name.name = 'name';
+        name.id = 'name';
+        name.placeholder = 'Ім’я';
+        form.appendChild(name);
+
+        // ств. поле "Прізвище"
+
+        const surname = document.createElement('input');
+        surname.type = 'text';
+        surname.name ='surname';
+        surname.id ='surname';
+        surname.placeholder = 'Прізвище';
+        form.appendChild(surname);
+
+        // ств. поле "Вік"
+
+        const age = document.createElement('input');
+        age.type = 'text';
+        age.name = 'age';
+        age.id = 'age';
+        age.placeholder = 'Вік';
+        form.appendChild(age);
+
+        // ств. кнопку
+
+        const button = document.createElement('button');
+        button.id = 'button';
+        form.appendChild(button);
+        button.textContent = 'Submit';
+
+        form.addEventListener('submit', function(event) { //Метод addEventListener() 
+            // використовується в мові програмування JavaScript для додавання обробників подій до елемента DOM.
+            //  Цей метод дозволяє реагувати на різні події, такі як кліки, наведення курсору, зміна та інші, 
+            // і виконувати певні дії у разі виникнення цих подій.
+            // event - подія, а функція - обробник подій !!!!!
+            event.preventDefault();
+            // Метод preventDefault() інтерфейсу Event повідомляє браузеру, що якщо подія не обробляється явно,
+            // її дія за замовчуванням не повинна виконуватися так, як це зазвичай буває. Виклик preventDefault()
+            // скасовує подію на будь-якому етапі її потоку, що означає, що будь-яка дія за замовчуванням,
+            // яку зазвичай виконує реалізація через цю подію, не відбудеться.
+            const nameValue = name.value;
+            const surnameValue = surname.value;
+            const ageValue = age.value;
+            const objForm = {
+                name: nameValue,
+                surname: surnameValue,
+                age: ageValue,
+            }
+            console.log(objForm);
+            const divForm = document.createElement('div');
+            divForm.textContent = `Ім’я:  ${objForm.name}, Прізвище: ${objForm.surname}, Вік: ${objForm.age}`;
+            document.body.appendChild(divForm);
+        })           
+
+
         
     </script>
 </body>
