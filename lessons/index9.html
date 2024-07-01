@@ -15,6 +15,10 @@
     <button id=prev>Prev</button>
     <button id=next>Next</button>
     <br></br>
+    <div id=text> Довільний текст </div>
+    <button id=reset>Reset</button>
+    <br></br>
+
 
     <script>
         // 1.  Стоврити форму з трьома полями для name,sruname,age та кнопкою.
@@ -139,7 +143,41 @@
             displayObject();
         });
 
-        // 5. 
+        // 5. Створити довільний елемент з id = text та створити кнопку.
+        // Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+        const text = document.getElementById('text');
+        const buttonRes = document.getElementById('reset');
+        buttonRes.addEventListener('click', function () {
+            text.style.display = 'none';
+        });
+
+        // 6.створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку 
+        // зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+
+        const ageForm = document.createElement('form');
+        ageForm.id = 'ageForm';
+        document.body.appendChild(ageForm);
+        const ageV = document.createElement('input');
+        ageV.id = 'ageV';
+        ageV.placeholder = 'Напиши свій вік';
+        ageForm.appendChild(ageV);
+        const buttonAge = document.createElement('button');
+        buttonAge.id = 'buttonAge';
+        buttonAge.textContent = 'Натисни';
+        ageForm.appendChild(buttonAge);
+        buttonAge.addEventListener('click', function () {
+            const ageValue = ageV.value;
+            if (ageValue < 18) {
+                alert('Вік меньше 18');
+            } else {
+                alert('Вік більше 18');
+            }
+        });
+
+
+
+        
 
     </script>
 </body>
