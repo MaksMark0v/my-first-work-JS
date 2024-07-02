@@ -204,7 +204,8 @@
         buttonTable.textContent = 'Натисни';
         tableForm.appendChild(buttonTable);
 
-        buttonTable.addEventListener('click', function () {
+        buttonTable.addEventListener('click', function (event) {
+            event.preventDefault();    
             const rowValue = row.value;
             const colValue = col.value;
             const contentValue = content.value;
