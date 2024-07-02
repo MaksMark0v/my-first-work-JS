@@ -18,6 +18,8 @@
     <div id=text> Довільний текст </div>
     <button id=reset>Reset</button>
     <br></br>
+    <br></br>
+
 
 
     <script>
@@ -125,12 +127,12 @@
         const prevBut = document.getElementById('prev');
         const nextBut = document.getElementById('next');
 
-        function displayObject(){        // функція для виведення обєктів
+        function displayObject() {        // функція для виведення обєктів
             mass.textContent = '';
-            for (let i = startInd; i < startInd + 10; i++) {                
-                    const objectsDiv = document.createElement('div');
-                    objectsDiv.textContent = `id: ${objects[i].id}, name: ${objects[i].name}`;
-                    mass.appendChild(objectsDiv);                
+            for (let i = startInd; i < startInd + 10; i++) {
+                const objectsDiv = document.createElement('div');
+                objectsDiv.textContent = `id: ${objects[i].id}, name: ${objects[i].name}`;
+                mass.appendChild(objectsDiv);
             }
         }
         displayObject();
@@ -175,9 +177,55 @@
             }
         });
 
+        // 7. Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість комірок, третій вміст комірок.
+        // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 
+        const tableForm = document.createElement('form');
+        tableForm.id = 'tableForm';
+        document.body.appendChild(tableForm);
 
+        const row = document.createElement('input');
+        row.id = 'row';
+        row.placeholder = 'Кількість рядків';
+        tableForm.appendChild(row);
+
+        const col = document.createElement('input');
+        col.id = 'col';
+        col.placeholder = 'Кількість комірок';
+        tableForm.appendChild(col);
+
+        const content = document.createElement('input');
+        content.id = 'content';
+        content.placeholder = 'Вміст комірок';
+        tableForm.appendChild(content);
+
+        const buttonTable = document.createElement('button');
+        buttonTable.id = 'buttonTable';
+        buttonTable.textContent = 'Натисни';
+        tableForm.appendChild(buttonTable);
+
+        buttonTable.addEventListener('click', function () {
+            const rowValue = row.value;
+            const colValue = col.value;
+            const contentValue = content.value;
+            const table = document.createElement('table');
+            for (let i = 0; i < rowValue; i++) {
+                const tr = document.createElement('tr');
+                for (let j = 0; j < colValue; j++) {
+                    const td = document.createElement('td');
+                    td.textContent = contentValue;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }            
+            document.body.appendChild(table);
+        });
         
+
+
+
+
+
 
     </script>
 </body>
