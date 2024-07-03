@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
-        
+        // 1. взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
+        fetch('https://dummyjson.com/carts')
+            .then(response => response.json()) //JavaScript Object Notation - (запис об’єктів JavaScript), 
+            // йдеться про формат, що дозволяє представити об’єкт JavaScript у вигляді рядка - рядка який можна зберігати та передавати
+            .then(json => console.log(json));
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => {
+                const container = document.createElement('ul');
+                document.body.appendChild(container);
+
+                users.forEach(user => {
+                    const liItem = document.createElement('li');
+                    liItem.innerText = user.name;
+                    container.appendChild(liItem);
+                });
+
+            })
+
+        // 2. взяти https://dummyjson.com/docs/recipes та
+        //  вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
+
+        fetch('https://dummyjson.com/recipes')
+            .then(res => res.json())
+            .then(console.log);
+
+        fetch('https://dummyjson.com/docs/recipes')
+            .then(response => response.json())
+            .then(recipes => {
+                const container = document.createElement('ul');
+                document.body.appendChild(container);
+                recipes.forEach(recipe => {
+                    const li = document.createElement('li');
+                    li.innerText = recipe.name;
+                    container.appendChild(li);
+                });
+            });
+
+
+
     </script>
 </body>
+
 </html>
