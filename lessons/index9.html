@@ -27,67 +27,108 @@
         //  При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. 
         // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
 
-        const form = document.createElement('form');
-        form.id = 'form';
-        document.body.appendChild(form);
+        // const form = document.createElement('form');
+        // form.id = 'form';
+        // document.body.appendChild(form);
 
-        // ств. поле "Ім’я"
+        // // ств. поле "Ім’я"
 
-        const name = document.createElement('input');
-        name.type = 'text';
-        name.name = 'name';
-        name.id = 'name';
-        name.placeholder = 'Ім’я';
-        form.appendChild(name);
+        // const name = document.createElement('input');
+        // name.type = 'text';
+        // name.name = 'name';
+        // name.id = 'name';
+        // name.placeholder = 'Ім’я';
+        // form.appendChild(name);
 
-        // ств. поле "Прізвище"
+        // // ств. поле "Прізвище"
 
-        const surname = document.createElement('input');
-        surname.type = 'text';
-        surname.name = 'surname';
-        surname.id = 'surname';
-        surname.placeholder = 'Прізвище';
-        form.appendChild(surname);
+        // const surname = document.createElement('input');
+        // surname.type = 'text';
+        // surname.name = 'surname';
+        // surname.id = 'surname';
+        // surname.placeholder = 'Прізвище';
+        // form.appendChild(surname);
 
-        // ств. поле "Вік"
+        // // ств. поле "Вік"
 
-        const age = document.createElement('input');
-        age.type = 'text';
-        age.name = 'age';
-        age.id = 'age';
-        age.placeholder = 'Вік';
-        form.appendChild(age);
+        // const age = document.createElement('input');
+        // age.type = 'text';
+        // age.name = 'age';
+        // age.id = 'age';
+        // age.placeholder = 'Вік';
+        // form.appendChild(age);
 
-        // ств. кнопку
+        // // ств. кнопку
 
-        const button = document.createElement('button');
-        button.id = 'button';
-        form.appendChild(button);
-        button.textContent = 'Submit';
+        // const button = document.createElement('button');
+        // button.id = 'button';
+        // form.appendChild(button);
+        // button.textContent = 'Submit';
 
-        form.addEventListener('submit', function (event) { //Метод addEventListener() 
-            // використовується в мові програмування JavaScript для додавання обробників подій до елемента DOM.
-            //  Цей метод дозволяє реагувати на різні події, такі як кліки, наведення курсору, зміна та інші, 
-            // і виконувати певні дії у разі виникнення цих подій.
-            // event - подія, а функція - обробник подій !!!!!
-            event.preventDefault();
-            // Метод preventDefault() інтерфейсу Event повідомляє браузеру, що якщо подія не обробляється явно,
-            // її дія за замовчуванням не повинна виконуватися так, як це зазвичай буває. Виклик preventDefault()
-            // скасовує подію на будь-якому етапі її потоку, що означає, що будь-яка дія за замовчуванням,
-            // яку зазвичай виконує реалізація через цю подію, не відбудеться.
-            const nameValue = name.value;
-            const surnameValue = surname.value;
-            const ageValue = age.value;
-            const objForm = {
-                name: nameValue,
-                surname: surnameValue,
-                age: ageValue,
+        // form.addEventListener('submit', function (event) { //Метод addEventListener() 
+        //     // використовується в мові програмування JavaScript для додавання обробників подій до елемента DOM.
+        //     //  Цей метод дозволяє реагувати на різні події, такі як кліки, наведення курсору, зміна та інші, 
+        //     // і виконувати певні дії у разі виникнення цих подій.
+        //     // event - подія, а функція - обробник подій !!!!!
+        //     event.preventDefault();
+        //     // Метод preventDefault() інтерфейсу Event повідомляє браузеру, що якщо подія не обробляється явно,
+        //     // її дія за замовчуванням не повинна виконуватися так, як це зазвичай буває. Виклик preventDefault()
+        //     // скасовує подію на будь-якому етапі її потоку, що означає, що будь-яка дія за замовчуванням,
+        //     // яку зазвичай виконує реалізація через цю подію, не відбудеться.
+        //     const nameValue = name.value;
+        //     const surnameValue = surname.value;
+        //     const ageValue = age.value;
+        //     const objForm = {
+        //         name: nameValue,
+        //         surname: surnameValue,
+        //         age: ageValue,
+        //     }
+        //     console.log(objForm);
+        //     const divForm = document.createElement('div');
+        //     divForm.textContent = `Ім’я:  ${objForm.name}, Прізвище: ${objForm.surname}, Вік: ${objForm.age}`;
+        //     document.body.appendChild(divForm);
+        // });
+
+        function createForm() {
+            const form = document.createElement('form');
+            form.id = 'form';
+            document.body.appendChild(form);
+            const fields = [
+                { label: 'Ім’я', name: 'name' },
+                { label: 'Прізвище', name: 'surname' },
+                { label: 'Вік', name: 'age' }
+            ];
+            for (const field of fields) {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.name = field.name;
+                input.id = field.name;
+                input.placeholder = field.label;
+                form.appendChild(input);
             }
-            console.log(objForm);
-            const divForm = document.createElement('div');
-            divForm.textContent = `Ім’я:  ${objForm.name}, Прізвище: ${objForm.surname}, Вік: ${objForm.age}`;
-            document.body.appendChild(divForm);
-        });
+            const button = document.createElement('button');
+            button.id = 'button';
+            form.appendChild(button);
+            button.textContent = 'Submit';
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const nameValue = form.elements.name.value;
+                const surnameValue = form.elements.surname.value;
+                const ageValue = form.elements.age.value;
+                // Обробка введених даних
+                const objForm = {
+                    name: nameValue,
+                    surname: surnameValue,
+                    age: ageValue,
+                }
+                const divForm = document.createElement('div');
+                divForm.textContent = `Ім’я:  ${objForm.name}, Прізвище: ${objForm.surname}, Вік: ${objForm.age}`;
+                document.body.appendChild(divForm);
+            });
+        }
+        // Виклик функції для створення форми
+        createForm();
+
 
         // 2. є сторінка, на якій є блок, я кому знаходиьтся цифра.
         // написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
@@ -205,7 +246,7 @@
         tableForm.appendChild(buttonTable);
 
         buttonTable.addEventListener('click', function (event) {
-            event.preventDefault();    
+            event.preventDefault();
             const rowValue = row.value;
             const colValue = col.value;
             const contentValue = content.value;
@@ -218,10 +259,10 @@
                     tr.appendChild(td);
                 }
                 table.appendChild(tr);
-            }            
+            }
             document.body.appendChild(table);
         });
-        
+
 
 
 
