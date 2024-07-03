@@ -12,19 +12,20 @@
     <script>
         // 1. взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
         fetch('https://dummyjson.com/docs/carts')
-        // .then(response => response.json())
-        .then( carts => console.log(carts) )
-            // .then(response => response.json()) //JavaScript Object Notation - (запис об’єктів JavaScript), 
-            // йдеться про формат, що дозволяє представити об’єкт JavaScript у вигляді рядка - рядка який можна зберігати та передавати
-            // .then(json => console.log(json));
+            // .then(response => response.json())
+            .then(carts => console.log(carts))
+        // .then( function(someRecepies) { console.log(someRecepies)})
+        // .then(response => response.json()) //JavaScript Object Notation - (запис об’єктів JavaScript), 
+        // йдеться про формат, що дозволяє представити об’єкт JavaScript у вигляді рядка - рядка який можна зберігати та передавати
+        // .then(json => console.log(json));
 
-        
+
         // 2. взяти https://dummyjson.com/docs/recipes та
         //  вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
 
         fetch('https://dummyjson.com/recipes')
-        .then(response => response.json())
-        .then( recipes => console.log(recipes))
+            .then(response => response.json())
+            .then(recipes => console.log(recipes))
 
         fetch('https://dummyjson.com/docs/recipes')
             .then(response => response.json())
@@ -39,7 +40,29 @@
                 });
             });
 
-            // 3.
+        // 3. з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+        // вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+        // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
+        // отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   де ХХХ - айді користувача)
+
+        fetch('http://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => {
+                const containerUl = document.createElement('ul');
+                document.body.appendChild(containerUl);
+                users.forEach(user => {
+                    const userLi = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = `https://jsonplaceholder.typicode.com/users/${user.id}`;
+                    link.innerText = `Користувач ${user.id} : ${user.name}`;
+                    userLi.appendChild(link);
+                    containerUl.appendChild(userLi);
+                });
+            });
+
+
+
+
 
 
 
