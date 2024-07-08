@@ -11,8 +11,8 @@
 
     <script>
         // 1. взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
-        fetch('https://dummyjson.com/docs/carts')
-            // .then(response => response.json())
+        fetch('https://dummyjson.com/carts')
+            .then(response => response.json())
             .then(carts => console.log(carts))
         // .then( function(someRecepies) { console.log(someRecepies)})
         // .then(response => response.json()) //JavaScript Object Notation - (запис об’єктів JavaScript), 
@@ -27,13 +27,13 @@
             .then(response => response.json())
             .then(recipes => console.log(recipes))
 
-        fetch('https://dummyjson.com/docs/recipes')
+        fetch('https://dummyjson.com/recipes')
             .then(response => response.json())
             .then(recipes => {
                 const container = document.createElement('ul');
                 document.body.appendChild(container);
 
-                recipes.forEach(recipe => {
+                recipes.recipes.forEach(recipe => {  //< ????
                     const li = document.createElement('li');
                     li.innerText = recipe.name;
                     container.appendChild(li);

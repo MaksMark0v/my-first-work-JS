@@ -92,6 +92,8 @@
         function createForm() {
             const form = document.createElement('form');
             form.id = 'form';
+            form.name = 'formOne';
+            // form.setAttribute('id', 'formOne'); ????<
             document.body.appendChild(form);
             const fields = [
                 { label: 'Ім’я', name: 'name' },
@@ -110,7 +112,12 @@
             button.id = 'button';
             form.appendChild(button);
             button.textContent = 'Submit';
-            form.addEventListener('submit', function (event) {
+        }
+
+        // Виклик функції для створення форми
+        createForm();
+
+        document.forms.formOne.addEventListener('submit', function (event) {
                 event.preventDefault();
                 const nameValue = form.elements.name.value;
                 const surnameValue = form.elements.surname.value;
@@ -121,13 +128,11 @@
                     surname: surnameValue,
                     age: ageValue,
                 }
+                
                 const divForm = document.createElement('div');
                 divForm.textContent = `Ім’я:  ${objForm.name}, Прізвище: ${objForm.surname}, Вік: ${objForm.age}`;
                 document.body.appendChild(divForm);
             });
-        }
-        // Виклик функції для створення форми
-        createForm();
 
 
         // 2. є сторінка, на якій є блок, я кому знаходиьтся цифра.
