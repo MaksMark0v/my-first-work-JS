@@ -42,7 +42,7 @@
                 const userButton = document.createElement('button');
                 userButton.innerText = 'Posts of current user';
                 userButton.addEventListener('click', url =>{
-                    window.location.href = `post-details.html?userId=${userId}/posts`
+                    window.location.href = `post-details.html?userId=${userId}`
                 });
                 userDetails.appendChild(userButton);             
             });
