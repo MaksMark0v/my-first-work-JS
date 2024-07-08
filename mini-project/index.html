@@ -19,6 +19,7 @@
 
        const containerUser = document.createElement('div');
        document.body.appendChild(containerUser);
+       console.log(users)
        users.forEach(user => {
            const userBlock = document.createElement('div');
            userBlock.innerText = `Id: ${user.id}, Name: ${user.name}`;
@@ -28,6 +29,7 @@
        //на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
 
        const userLink = document.createElement('a');
+
        userLink.href = `user-details.html?id=${user.id}`;
        userLink.innerText = 'Details';
        userBlock.appendChild(userLink);
