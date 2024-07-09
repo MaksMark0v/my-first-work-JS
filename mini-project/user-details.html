@@ -57,16 +57,22 @@
                         const postDiv = document.createElement('div');
                         postDiv.innerHTML = `
                     <h3>Title: ${post.title}</h3>
-                    <button id='butPost'>Details</button>
-                    `
+                    <button class='butPost' data-post-id='${post.id}'>Details</button>
+                `;
                         postContainer.appendChild(postDiv);
-                        const butPost = document.getElementById('butPost');
-                        butPost.addEventListener('click', () => {
+                    });
+
+                    // Після додавання всіх постів до контейнера, додаємо обробник події для кнопок "Details"
+                    const buttons = document.querySelectorAll('.butPost');
+                    buttons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const postId = button.getAttribute('data-post-id');
                             window.location.href = `post-details.html?postId=${postId}`;
                         });
                     });
-                })
-            }
+                });
+        }
+
 
 
     </script>
