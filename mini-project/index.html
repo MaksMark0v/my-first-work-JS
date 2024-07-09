@@ -6,6 +6,29 @@
     <title>Document</title>
 </head>
 <body>
+    <div id = 'divBtn'>
+        <button id='btn'> USERS </button> </div>
+    </div>
     
+    
+    <script>
+        const divBtn = document.getElementById('divBtn');
+        divBtn.style.display = 'flex';
+        divBtn.style.justifyContent = 'center';
+        divBtn.style.height = '100px';
+
+
+
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            window.location.href = '/mini-project/users.html';
+        });
+        btn.style.backgroundColor = '#011222';
+        btn.style.color = '#ffffff';
+
+
+        
+
+    </script>
 </body>
 </html>
