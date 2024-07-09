@@ -21,8 +21,8 @@
                         const postDiv = document.createElement('div');
                         postDiv.innerHTML = `
                     <h3>Title: ${post.title}</h3>
-                    <p>${post.body}</p>
-                `;
+                    <button id='butPost'>Details</button>
+                    `
                         postContainer.appendChild(postDiv);
                     });
                 })
@@ -61,6 +61,10 @@
                     getPostsForUser(userId);
                 });
                 userDetails.appendChild(userButton);
+            });
+            const butPost = document.getElementById('butPost');
+            butPost.addEventListener('click', () => {
+                window.location.href = `post-details.html?postId=${postId}`;
             });
 
     </script>
