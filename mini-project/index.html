@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
-        
+
         // 1. отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
 
         fetch('https://jsonplaceholder.typicode.com/users')
-       .then(response => response.json())
-       .then(users => {
+            .then(response => response.json())
+            .then(users => {
 
-       //2. Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+                //2. Вивести id,name всіх user в index.html. Окремий блок для кожного user.
 
-       const containerUser = document.createElement('div');
-       document.body.appendChild(containerUser);
-       console.log(users)
-       users.forEach(user => {
-           const userBlock = document.createElement('div');
-           userBlock.innerText = `Id: ${user.id}, Name: ${user.name}`;
-           containerUser.appendChild(userBlock);
-      
-       // 3. Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  
-       //на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
+                const containerUser = document.createElement('div');
+                document.body.appendChild(containerUser);
+                console.log(users)
+                users.forEach(user => {
+                    const userBlock = document.createElement('div');
+                    userBlock.innerText = `Name: ${user.name}`;
+                    containerUser.appendChild(userBlock);
 
-       const userLink = document.createElement('a');
+                    // 3. Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  
+                    //на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
 
-       userLink.href = `user-details.html?id=${user.id}`;
-       userLink.innerText = 'Details';
-       userBlock.appendChild(userLink);
-       
+                    const userLink = document.createElement('a');
 
-    })});
+                    userLink.href = `user-details.html?id=${user.id}`;
+                    userLink.innerText = 'Details';
+                    userBlock.appendChild(userLink);
+
+
+                })
+            });
 
 
 
     </script>
 </body>
+
 </html>
