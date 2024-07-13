@@ -11,6 +11,20 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <title>Users</title>
+
+    <style>
+        body {
+            background-color: #093664; /* Світло-сірий фон */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .user-link {
+            margin-left: 10px; /* Відступ перед Details */
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -42,6 +56,7 @@
 
                     userLink.href = `user-details.html?id=${user.id}`;
                     userLink.innerText = 'Details';
+                    userLink.classList.add('user-link'); // Додавання класу user-link
                     userBlock.appendChild(userLink);
 
 
