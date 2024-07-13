@@ -18,6 +18,27 @@
                 text-align: center;
                 color: white;
             }
+            /* Стили для планшетів */
+        @media (max-width: 768px) {
+            body {
+                background-color: #0a4a8a; /* Зміна кольору фону для планшетів */
+                padding: 15px;
+            }
+            h3, h4, p {
+                font-size: 1.2em; /* Зменшення розміру шрифту для планшетів */
+            }
+        }
+
+        /* Стили для мобільних пристроїв */
+        @media (max-width: 576px) {
+            body {
+                background-color: #0b5bb1; /* Зміна кольору фону для мобільних пристроїв */
+                padding: 10px;
+            }
+            h3, h4, p {
+                font-size: 1em; /* Зменшення розміру шрифту для мобільних пристроїв */
+            }
+        }
            
         </style>
 </head>
@@ -43,6 +64,7 @@
                 // Вставка даних про користувача в блок
 
                 const userDetails = document.getElementById('user-details');
+                
                 userDetails.innerHTML = `
                     <h2>${user.name}</h2>
                     <p>Username: ${user.username}</p>

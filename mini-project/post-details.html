@@ -10,16 +10,48 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <link rel="icon" href="/mini-project/Preview.png">
-        <style>
+    <link rel="icon" href="/mini-project/Preview.png">
+    <style>
+        body {
+            background-color: #093664;
+            /* Світло-сірий фон */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Стили для планшетів */
+        @media (max-width: 768px) {
             body {
-                background-color: #093664; /* Світло-сірий фон */
-                padding: 20px;
-                text-align: center;
-                color: white;
+                background-color: #0a4a8a;
+                /* Зміна кольору фону для планшетів */
+                padding: 15px;
             }
-           
-        </style>
+
+            h3,
+            h4,
+            p {
+                font-size: 1.2em;
+                /* Зменшення розміру шрифту для планшетів */
+            }
+        }
+
+        /* Стили для мобільних пристроїв */
+        @media (max-width: 576px) {
+            body {
+                background-color: #0b5bb1;
+                /* Зміна кольору фону для мобільних пристроїв */
+                padding: 10px;
+            }
+
+            h3,
+            h4,
+            p {
+                font-size: 1em;
+                /* Зменшення розміру шрифту для мобільних пристроїв */
+            }
+        }
+    </style>
 </head>
 
 <body>
