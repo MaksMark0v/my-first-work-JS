@@ -19,8 +19,7 @@
             padding: 20px;
             text-align: center;
             color: white;
-        }
-        
+        }        
         .user-link {
             margin-left: 10px; /* Відступ перед Details */
         }
@@ -34,7 +33,6 @@
                 font-size: 1.2em; /* Зменшення розміру шрифту для планшетів */
             }
         }
-
         /* Стилi для мобільних пристроїв */
         @media (max-width: 576px) {
             body {
@@ -61,15 +59,13 @@
 
                 //2. Вивести id,name всіх user в index.html. Окремий блок для кожного user.
 
-                const containerUser = document.createElement('div');
+                const containerUser = document.createElement('div');                
                 document.body.appendChild(containerUser);
                 console.log(users)
                 users.forEach(user => {
                     const userBlock = document.createElement('div');
                     userBlock.innerText = `Name: ${user.name}`;
                     containerUser.appendChild(userBlock);
-
-
 
                     // 3. Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  
                     //на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
@@ -80,8 +76,6 @@
                     userLink.innerText = 'Details';
                     userLink.classList.add('user-link'); // Додавання класу user-link
                     userBlock.appendChild(userLink);
-
-
                 })
             });
 
