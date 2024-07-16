@@ -9,7 +9,7 @@
             .then(comments => {
                 comments.forEach(comment => {
                     const commentDiv = document.createElement('div');
-                    commentDiv.classList.add('border', 'p-3', 'm-2', 'flex-grow-1');
+                    commentDiv.classList.add('card', 'm-2', 'flex-grow-1');
                     commentDiv.innerHTML = `
                 <h4>Name: ${comment.name}</h4>
                 <p>Email: ${comment.email}</p>

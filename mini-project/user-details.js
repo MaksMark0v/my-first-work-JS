@@ -11,40 +11,43 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
     .then(response => response.json())
     .then(user => {
         // Вставка даних про користувача в блок
-
         const userDetails = document.getElementById('user-details');
         userDetails.innerHTML = `
-             <h2>${user.name}</h2>
-             <p>Username: ${user.username}</p>
-             <p>Email: ${user.email}</p>
-             <p>Address: ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
-             <p>Phone: ${user.phone}</p>
-             <p>Website: ${user.website}</p>
-             `;
-        // Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
-        //    (для отримання постів використовуй эндпоінт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-        //    Кожному посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, 
-        // яка має детальну інфу про поточний пост.
+            <div class="card bg-light border-primary mb-3">
+                <div class="card-header text-white bg-primary">User Details</div>
+                <div class="card-body">
+                    <h2 class="card-title text-primary">${user.name}</h2>
+                    <p class="card-text">Username: ${user.username}</p>
+                    <p class="card-text">Email: ${user.email}</p>
+                    <p class="card-text">Address: ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
+                    <p class="card-text">Phone: ${user.phone}</p>
+                    <p class="card-text">Website: ${user.website}</p>
+                    <button id="user-posts-btn" class="btn btn-primary my-3">Posts of current user</button>
+                </div>
+            </div>
+        `;
 
-        const userButton = document.createElement('button');
-        userButton.innerText = 'Posts of current user';
-        userButton.classList.add('btn', 'btn-primary', 'my-3');
+        const userButton = document.getElementById('user-posts-btn');
         userButton.addEventListener('click', () => {
             getPostsForUser(userId);
         });
-        userDetails.appendChild(userButton);
     });
+
 function getPostsForUser(userId) {
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
         .then(response => response.json())
         .then(posts => {
             const postContainer = document.getElementById('post-container');
+            postContainer.innerHTML = ''; // Очищуємо контейнер перед додаванням нових постів
             posts.forEach(post => {
                 const postDiv = document.createElement('div');
-                postDiv.classList.add('border-bottom', 'p-3', 'mb-3');
+                postDiv.classList.add('card', 'mb-3', 'bg-light', 'border-info');
                 postDiv.innerHTML = `
-                <h3>Title: ${post.title}</h3>
-                <button class='butPost btn btn-info' data-post-id='${post.id}'>Details</button>`;
+                    <div class="card-body">
+                        <h3 class="card-title text-info">Title: ${post.title}</h3>
+                        <button class='butPost btn btn-info' data-post-id='${post.id}'>Details</button>
+                    </div>
+                `;
                 postContainer.appendChild(postDiv);
             });
 

@@ -6,11 +6,13 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
     //2. Вивести id,name всіх user в index.html. Окремий блок для кожного user.
 
-    const containerUser = document.createElement('div');                
+    const containerUser = document.createElement('div');
+    containerUser.classList.add('container', 'mt-4');                
     document.body.appendChild(containerUser);
     console.log(users)
     users.forEach(user => {
         const userBlock = document.createElement('div');
+        userBlock.classList.add('card', 'mb-3', 'bg-light', 'border-primary');
         userBlock.innerText = `Name: ${user.name}`;
         containerUser.appendChild(userBlock);
 
