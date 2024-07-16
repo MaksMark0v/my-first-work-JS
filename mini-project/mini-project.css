@@ -10,7 +10,8 @@ body {
     background-repeat: no-repeat;
     background-position: 10px center;
     padding-left: 40px; /* Відступ для тексту після іконки */
-}      
+}  
+    
 .user-link {
     margin-left: 10px; /* Відступ перед Details */
 }

@@ -28,6 +28,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
 
         const userButton = document.createElement('button');
         userButton.innerText = 'Posts of current user';
+        userButton.classList.add('btn', 'btn-primary', 'my-3');
         userButton.addEventListener('click', () => {
             getPostsForUser(userId);
         });
@@ -40,9 +41,10 @@ function getPostsForUser(userId) {
             const postContainer = document.getElementById('post-container');
             posts.forEach(post => {
                 const postDiv = document.createElement('div');
+                postDiv.classList.add('border-bottom', 'p-3', 'mb-3');
                 postDiv.innerHTML = `
                 <h3>Title: ${post.title}</h3>
-                <button class='butPost' data-post-id='${post.id}'>Details</button>`;
+                <button class='butPost btn btn-info' data-post-id='${post.id}'>Details</button>`;
                 postContainer.appendChild(postDiv);
             });
 
