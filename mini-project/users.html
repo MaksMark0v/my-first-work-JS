@@ -12,79 +12,17 @@
         crossorigin="anonymous"></script>
     <title>Users</title>
     <link rel="icon" href="/mini-project/Preview.png">
+    <link rel="stylesheet" href="/mini-project/mini-project.css">
 
-    <style>
-        body {
-            background-color: #093664; /* Світло-сірий фон */
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }        
-        .user-link {
-            margin-left: 10px; /* Відступ перед Details */
-        }
-        /* Стили для планшетів */
-        @media (max-width: 768px) {
-            body {
-                background-color: #0a4a8a; /* Зміна кольору фону для планшетів */
-                padding: 15px;
-            }
-            h3, h4, p {
-                font-size: 1.2em; /* Зменшення розміру шрифту для планшетів */
-            }
-        }
-        /* Стилi для мобільних пристроїв */
-        @media (max-width: 576px) {
-            body {
-                background-color: #0b5bb1; /* Зміна кольору фону для мобільних пристроїв */
-                padding: 10px;
-            }
-            h3, h4, p {
-                font-size: 1em; /* Зменшення розміру шрифту для мобільних пристроїв */
-            }
-        }
-    </style>
-    
+
+
 </head>
 
 <body>
     <button onclick="window.location.href='index.html'" class="btn btn-primary mt-3">
         <img src="/mini-project/Preview.png" alt="Логотип" style="height: 30px; width: 30px;">
     </button>
-
-    <script>
-
-        // 1. отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
-
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(users => {
-
-                //2. Вивести id,name всіх user в index.html. Окремий блок для кожного user.
-
-                const containerUser = document.createElement('div');                
-                document.body.appendChild(containerUser);
-                console.log(users)
-                users.forEach(user => {
-                    const userBlock = document.createElement('div');
-                    userBlock.innerText = `Name: ${user.name}`;
-                    containerUser.appendChild(userBlock);
-
-                    // 3. Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  
-                    //на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
-
-                    const userLink = document.createElement('a');
-
-                    userLink.href = `user-details.html?id=${user.id}`;
-                    userLink.innerText = 'Details';
-                    userLink.classList.add('user-link'); // Додавання класу user-link
-                    userBlock.appendChild(userLink);
-                })
-            });
-
-
-
-    </script>
+    <script src="/mini-project/users.js"></script>
 </body>
 
 </html>
