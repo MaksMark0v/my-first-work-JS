@@ -1,4 +1,3 @@
-
 const url = new URLSearchParams(window.location.search);
 const postId = url.get('postId');
 
@@ -11,13 +10,34 @@ fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         comments.forEach(comment => {
             const commentDiv = document.createElement('div');
             commentDiv.classList.add('card', 'm-2', 'flex-grow-1');
-
-            // TODO: винести у функцію і зробитити динамічну побудову
-            commentDiv.innerHTML = `
-        <h4>Name: ${comment.name}</h4>
-        <p>Email: ${comment.email}</p>
-        <p>${comment.body}</p>
-    `;
+            displayCommentDetails(comment, commentDiv);
             container.appendChild(commentDiv);
-        })
-    })
+        });
+    });
+
+function displayCommentDetails(comment, container) {
+    for (const key in comment) {
+        if (key === 'id' || key === 'postId') continue; // Пропускаємо ключі 'id' та 'postId'
+
+        const commentDetailsText = document.createElement('div');
+        commentDetailsText.classList.add("d-flex", 'card-text');
+
+        const commentDetailsTextKey = document.createElement('p');
+        commentDetailsTextKey.classList.add('me-2', 'fst-italic');
+        commentDetailsTextKey.innerText = `${key}:  `;
+
+        const commentDetailsTextValue = document.createElement('p');
+        commentDetailsTextValue.classList.add('fw-bold');
+
+        if (comment[key] !== null && typeof comment[key] === "object") {
+            displayCommentDetails(comment[key], commentDetailsTextValue);
+        } else {
+            commentDetailsTextValue.innerText = comment[key];
+        }
+
+        commentDetailsText.appendChild(commentDetailsTextKey);
+        commentDetailsText.appendChild(commentDetailsTextValue);
+
+        container.appendChild(commentDetailsText);
+    }
+}
