@@ -9,7 +9,7 @@ fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
     .then(comments => {
         comments.forEach(comment => {
             const commentDiv = document.createElement('div');
-            commentDiv.classList.add('card', 'm-2', 'flex-grow-1');
+            commentDiv.classList.add('card', 'm-2', 'flex-grow-1', 'comment-card');
             displayCommentDetails(comment, commentDiv);
             container.appendChild(commentDiv);
         });
@@ -20,7 +20,7 @@ function displayCommentDetails(comment, container) {
         if (key === 'id' || key === 'postId') continue; // Пропускаємо ключі 'id' та 'postId'
 
         const commentDetailsText = document.createElement('div');
-        commentDetailsText.classList.add("d-flex", 'card-text');
+        commentDetailsText.classList.add("d-flex", 'card-body');
 
         const commentDetailsTextKey = document.createElement('p');
         commentDetailsTextKey.classList.add('me-2', 'fst-italic');

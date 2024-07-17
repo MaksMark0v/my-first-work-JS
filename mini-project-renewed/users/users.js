@@ -17,7 +17,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
         userBlock.classList.add('card', 'bg-light', 'border-primary', 'h-100'); // Висота 100% для рівномірного відображення
 
         const userBlockBody = document.createElement('div');
-        userBlockBody.classList.add('card-body');
+        userBlockBody.classList.add('card-body','comment-card');
 
         const userLink = document.createElement('a');
         userLink.href = `../user/user-details.html?id=${user.id}`;
