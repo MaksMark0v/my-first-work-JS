@@ -12,12 +12,14 @@ function displayUserDetails(user, container) {
     
     for (const key in user) {
         const userDetailsCardBodyText = document.createElement('div');
-        userDetailsCardBodyText.classList.add("d-flex", 'card-text');
+        userDetailsCardBodyText.classList.add("d-flex", 'card-text', );
 
         const userDetailsCardBodyTextKey = document.createElement('p');
+        userDetailsCardBodyTextKey.classList.add('me-2', 'fst-italic');
         userDetailsCardBodyTextKey.innerText = `${key}:  `;
 
         const userDetailsCardBodyTextValue = document.createElement('p');
+        userDetailsCardBodyTextValue.classList.add('fw-bold');
 
 
         // Recursion!!!!

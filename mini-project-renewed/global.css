@@ -6,13 +6,6 @@ body {
     color: white;
 }  
 
-.btn-with-icon {
-    background-image: url('/img/preview-removebg-preview.png');
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    padding-left: 40px; /* Відступ для тексту після іконки */
-}  
 
 /* USERS PAGE */
 .width-30 {
