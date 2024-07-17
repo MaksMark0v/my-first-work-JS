@@ -5,7 +5,10 @@ body {
     text-align: center;
     color: white;
 }  
-
+.fixed-height {
+    height: 80vh; /* Фіксована висота */
+    overflow-y: auto; /* Додаємо прокрутку */
+}
 
 /* USERS PAGE */
 .width-30 {

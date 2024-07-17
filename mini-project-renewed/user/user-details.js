@@ -25,11 +25,17 @@ function displayUserDetails(user, container) {
         // Recursion!!!!
 
         // TODO: покращити перевівку
-        if(typeof user[key] === "object"){
-            displayUserDetails(user[key], userDetailsCardBodyTextValue)
+        // if(typeof user[key] === "object"){
+        //     displayUserDetails(user[key], userDetailsCardBodyTextValue)
+        // } else {
+        //     userDetailsCardBodyTextValue.innerText =  user[key];  
+        // }
+        if (user[key] !== null && typeof user[key] === "object") {
+            displayUserDetails(user[key], userDetailsCardBodyTextValue);
         } else {
-            userDetailsCardBodyTextValue.innerText =  user[key];  
+            userDetailsCardBodyTextValue.innerText = user[key];
         }
+
 
         userDetailsCardBodyText.appendChild(userDetailsCardBodyTextKey);
         userDetailsCardBodyText.appendChild(userDetailsCardBodyTextValue);
@@ -74,7 +80,7 @@ function getPostsForUser(userId) {
                 postDiv.classList.add('card', 'mb-3', 'bg-light', 'border-info');
                 postDiv.innerHTML = `
                     <div class="card-body">
-                        <h3 class="card-title text-info">Title: ${post.title}</h3>
+                        <h3 class="card-title text-info"> ${post.title}</h3>
                         <button class='butPost btn btn-info' data-post-id='${post.id}'>Details</button>
                     </div>
                 `;
