@@ -1,9 +1,8 @@
 const url = new URLSearchParams(window.location.search);
 const postId = url.get('postId');
 
-const container = document.createElement('comments');
+const container = document.getElementById('comments');
 container.classList.add('d-flex', 'flex-wrap', 'justify-content-around');
-document.body.appendChild(container);
 
 fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
     .then(response => response.json())
@@ -40,6 +39,5 @@ function displayCommentDetails(comment, container) {
         commentDetailsText.appendChild(commentDetailsTextValue);
 
         container.appendChild(commentDetailsText);
-
     }
 }
