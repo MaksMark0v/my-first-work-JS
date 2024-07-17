@@ -2,7 +2,7 @@ const url = new URLSearchParams(window.location.search);
 const postId = url.get('postId');
 
 const container = document.getElementById('comments');
-container.classList.add('d-flex', 'flex-wrap', 'justify-content-around');
+
 
 fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
     .then(response => response.json())
