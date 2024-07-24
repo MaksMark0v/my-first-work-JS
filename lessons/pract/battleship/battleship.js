@@ -40,6 +40,8 @@ let guess;
 let hits = 0;
 let guesses = 0;
 
+let isSunk = false;
+
 while (!isSunk) {
     guess = window.prompt("Готові, намір, вогонь! (введіть число від 0 до 6):");
     if (guess < 0 || guess > 6) {
@@ -59,5 +61,5 @@ while (!isSunk) {
     }
 }
 
-let accuracy = (3 / guesses) * 100;
-window.alert(`Вам знадобилося ${guesses} спроб, щоб потопити бойовий корабель. Ваша точність стрільби становить ${accuracy.toFixed(2)}%.`);
+let точність = (3 / guesses) * 100;
+window.alert(`Вам знадобилося ${guesses} спроб, щоб потопити бойовий корабель. Ваша точність стрільби становить ${точність.toFixed(2)}%.`);
