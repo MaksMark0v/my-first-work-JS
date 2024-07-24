@@ -1,4 +1,37 @@
 
+// let location1 = 3;
+// let location2 = 4;
+// let location3 = 5;
+
+// let guess;
+// let hits = 0;
+// let guesses = 0;
+
+// let isSunk = false;
+
+// while (isSunk == false) {
+//     guess = prompt("Ready, aim, fire! (enter a number from 0 - 6:");
+//     if (guess < 0 || guess > 6) {
+//         alert("Please enter a valid number.");
+//     } else {
+//         guesses = guesses + 1;
+//         if (guess == location1 || guess == location2 || guess == location3) {
+//             alert("Hit!");
+//             hits = hits + 1;
+//             if (hits == 3) {
+//                 isSunk = true;
+//                 alert("You sank my battleship!")
+//             }
+//         } else {
+//             alert("Miss!");
+//         }
+//     }
+// }
+
+// let stats = "You took" + " " + guesses + " " + " guesses to sink the battleship, " + " which means your shooting accuracy was " + (3/guesses);
+
+// alert(stats);
+
 let location1 = 3;
 let location2 = 4;
 let location3 = 5;
@@ -7,27 +40,24 @@ let guess;
 let hits = 0;
 let guesses = 0;
 
-let isSunk = false;
-
-while (isSunk == false) {
-    guess = prompt("Ready, aim, fire! (enter a number from 0 - 6:");
+while (!isSunk) {
+    guess = window.prompt("Готові, намір, вогонь! (введіть число від 0 до 6):");
     if (guess < 0 || guess > 6) {
-        alert("Please enter a valid number.");
+        window.alert("Будь ласка, введіть дійсне число.");
     } else {
-        guesses = guesses + 1;
+        guesses++;
         if (guess == location1 || guess == location2 || guess == location3) {
-            alert("Hit!");
-            hits = hits + 1;
-            if (hits == 3) {
+            window.alert("Попадання!");
+            hits++;
+            if (hits === 3) {
                 isSunk = true;
-                alert("You sank my battleship!")
+                window.alert("Ви потопили мій бойовий корабель!");
             }
         } else {
-            alert("Miss!");
+            window.alert("Промах!");
         }
     }
 }
 
-let stats = "You took" + " " + guesses + " " + " guesses to sink the battleship, " + " which means your shooting accuracy was " + (3/guesses);
-
-alert(stats);
+let accuracy = (3 / guesses) * 100;
+window.alert(`Вам знадобилося ${guesses} спроб, щоб потопити бойовий корабель. Ваша точність стрільби становить ${accuracy.toFixed(2)}%.`);
