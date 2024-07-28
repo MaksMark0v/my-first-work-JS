@@ -33,6 +33,20 @@ class Title extends React.Component {
         );
     }
 }
+class HelloWorld extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return React.createElement(
+            'p',
+            {},
+            'Hello World!'
+        );
+    }
+}
+
 
 class Container extends React.Component {
     constructor(props) {
@@ -44,13 +58,11 @@ class Container extends React.Component {
             'div',
             {},
             React.createElement(LikeButton),
-            React.createElement(Title)
+            React.createElement(Title),
+            React.createElement(HelloWorld)
         );
     }
 }
-
-
-
 
 const domContainer = document.querySelector('#like_button_container');
 const root = ReactDOM.createRoot(domContainer);
