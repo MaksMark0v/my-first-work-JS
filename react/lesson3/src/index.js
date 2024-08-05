@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-const Greeting = () => {
-    return (
-        <div>
-            <h1>Привіт!</h1>
-            <p>Це мій компонент у React.</p>
-        </div>
-    );
-};
 
-export default Greeting;
+import App from "./App";
+
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+    <>
+        <App />
+    </>
+);

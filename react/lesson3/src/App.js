@@ -1,12 +1,14 @@
 import React from 'react';
-import Greeting from './Greeting';
+import Container from 'react-bootstrap/Container';
 
-function App() {
+function App () {
     return (
-        <div className="App">
-            <Greeting />
-        </div>
-    );
+        <Container>
+            <div className = 'App'>
+            <h1>привіт</h1>
+            </div>
+        </Container>
+    );    
 }
 
 export default App;
