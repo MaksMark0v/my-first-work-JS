@@ -1,15 +1,24 @@
+// імпорт необхідних залежностей
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import UserName from './Components/UserName'
 
 
-function App() {
+function App() { //Компонент App визначається як функція
+  // Усередині компонента App ми визначаємо змінну 
+  //стану userName за допомогою хука useState:
   const [userName, setUserName] = useState("No Name");
+  // Ми визначаємо функцію обробки подій setUserNameFromInput
+  // для оновлення стану userName при зміні поля вводу:
   const setUserNameFromInput = (event) => {
     console.log("event", event)
     setUserName(event.target.value);
+    //Ми визначаємо функцію обробки подій setUserNameFromInput 
+    // для оновлення стану userName при зміні поля вводу.
   }
+  //Компонент App повертає JSX (JavaScript XML), 
+  //який визначає структуру інтерфейсу програми:
   return (
     <div className="App">
       <header className="App-header">
