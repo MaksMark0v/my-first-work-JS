@@ -16,22 +16,47 @@ const LoginForm = function LoginForm() {
 
   // Отримуємо компонент форми
   return (
+    // Створіть елемент форми та прикріпіть функцію handleSubmit до події onSubmit
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Email</label>
+      {/* // Створіть етикетку для поля введення електронної пошти */}
+      <label>Електронна пошта</label>
+      {/* Створіть поле введення для електронної пошти */}
       <input
+        // Встановіть тип поля введення на "email"
         type="email"
-        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+        // Використовуйте функцію register з react-hook-form, щоб зареєструвати поле введення
+        // з формою та задати правила валідації
+        {...register("email", {
+          // Зробіть поле електронної пошти обов'язковим
+          required: true,
+          // Використовуйте регулярний вираз, щоб валідувати електронну пошту
+          pattern: /^\S+@\S+$/i,
+        })}
       />
-      {errors.email && <p>Email is required and must be valid</p>}
-
-      <label>Password</label>
-      <input type="password" {...register("password", { required: true })} />
-      {errors.password && <p>Password is required</p>}
-
-      <button type="submit">Submit</button>
+      {/* // Показати повідомлення про помилку, якщо поле електронної пошти є
+      невалідним */}
+      {errors.email && (
+        <p>Електронна пошта є обов'язковою та повинна бути валідною</p>
+      )}
+      {/* // Створіть етикетку для поля введення пароля */}
+      <label>Пароль</label>
+      {/* // Створіть поле введення для пароля */}
+      <input
+        // Встановіть тип поля введення на "password"
+        type="password"
+        // Використовуйте функцію register з react-hook-form, щоб зареєструвати поле введення
+        // з формою та задати правила валідації
+        {...register("password", {
+          // Зробіть поле пароля обов'язковим
+          required: true,
+        })}
+      />
+      {/* // Показати повідомлення про помилку, якщо поле пароля є невалідним */}
+      {errors.password && <p>Пароль є обов'язковим</p>}
+      {/* // Створіть кнопку відправки, щоб відправити форму */}
+      <button type="submit">Відправити</button>
     </form>
   );
-}
+};
 
 export default LoginForm;
-
