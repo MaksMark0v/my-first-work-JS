@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import UserName from './Components/UserName'
+import LoginForm from './Components/LoginForm';
 
 
 function App() { //Компонент App визначається як функція
@@ -23,6 +24,7 @@ function App() { //Компонент App визначається як функ
     <div className="App">
       <header className="App-header">
         <UserName userName={userName} onChange={setUserNameFromInput}/>        
+        <LoginForm />
         <img src={logo} className="App-logo" alt="logo" />
         <p>UserName;
           Edit <code>src/App.js</code> and save to reload.
