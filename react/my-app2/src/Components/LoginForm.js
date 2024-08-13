@@ -1,61 +1,39 @@
-// Імпортуємо хук useForm з бібліотеки react-hook-form
 import { useForm } from "react-hook-form";
 
 const LoginForm = function LoginForm() {
-  // Використовуємо хук useForm, щоб отримати функції для керування формою
+  // Використовуємо react-hook-form для управління формою
   const {
-    register, // Функція для реєстрації полів вводу з формою
-    handleSubmit, // Функція для обробки відправки форми
-    formState: { errors }, // Стан форми, включаючи помилки
+    register, // Реєструємо поля вводу
+    handleSubmit, // Обробник події відправки форми
+    formState: { errors }, // Об'єкт з помилками валідації
   } = useForm();
 
-  // Визначаємо функцію для обробки відправки форми
+  // Функція, яка виконується при відправці форми
   const onSubmit = (data) => {
-    console.log(data);
+    console.log(data); // Виводимо дані з форми у консоль
   };
 
-  // Отримуємо компонент форми
   return (
-    // Створіть елемент форми та прикріпіть функцію handleSubmit до події onSubmit
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {/* // Створіть етикетку для поля введення електронної пошти */}
-      <label>Електронна пошта</label>
-      {/* Створіть поле введення для електронної пошти */}
-      <input
-        // Встановіть тип поля введення на "email"
-        type="email"
-        // Використовуйте функцію register з react-hook-form, щоб зареєструвати поле введення
-        // з формою та задати правила валідації
-        {...register("email", {
-          // Зробіть поле електронної пошти обов'язковим
-          required: true,
-          // Використовуйте регулярний вираз, щоб валідувати електронну пошту
-          pattern: /^\S+@\S+$/i,
-        })}
-      />
-      {/* // Показати повідомлення про помилку, якщо поле електронної пошти є
-      невалідним */}
-      {errors.email && (
-        <p>Електронна пошта є обов'язковою та повинна бути валідною</p>
-      )}
-      {/* // Створіть етикетку для поля введення пароля */}
-      <label>Пароль</label>
-      {/* // Створіть поле введення для пароля */}
-      <input
-        // Встановіть тип поля введення на "password"
-        type="password"
-        // Використовуйте функцію register з react-hook-form, щоб зареєструвати поле введення
-        // з формою та задати правила валідації
-        {...register("password", {
-          // Зробіть поле пароля обов'язковим
-          required: true,
-        })}
-      />
-      {/* // Показати повідомлення про помилку, якщо поле пароля є невалідним */}
-      {errors.password && <p>Пароль є обов'язковим</p>}
-      {/* // Створіть кнопку відправки, щоб відправити форму */}
-      <button type="submit">Відправити</button>
-    </form>
+    <div className="container">
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <h2 className="form-title">Форма входу</h2>
+        <div className="form-group">
+          <label className="form-label">Електронна пошта</label>
+          <input
+            type="email"
+            {...register("email", {
+              required: true, // Поле обов'язкове
+              pattern: /^\S+@\S+$/i, // Перевірка на правильний формат електронної пошти
+            })}
+            className="form-input"
+          />
+          {errors.email && <div className="error-message">Невірна електронна пошта</div>}
+        </div>
+        <button type="submit" className="submit-button">
+          Вхід
+        </button>
+      </form>
+    </div>
   );
 };
 

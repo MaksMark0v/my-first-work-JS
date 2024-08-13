@@ -4,6 +4,7 @@ import './App.css';
 import React, { useState } from 'react';
 import UserName from './Components/UserName'
 import LoginForm from './Components/LoginForm';
+import './Components/LoginForm.css';
 
 
 function App() { //Компонент App визначається як функція
@@ -24,7 +25,6 @@ function App() { //Компонент App визначається як функ
     <div className="App">
       <header className="App-header">
         <UserName userName={userName} onChange={setUserNameFromInput}/>        
-        <LoginForm />
         <img src={logo} className="App-logo" alt="logo" />
         <p>UserName;
           Edit <code>src/App.js</code> and save to reload.
@@ -37,6 +37,7 @@ function App() { //Компонент App визначається як функ
         >
           Learn React
         </a>
+        <LoginForm />
       </header>
     </div>
   );
