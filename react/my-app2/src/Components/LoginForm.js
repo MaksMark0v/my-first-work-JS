@@ -15,7 +15,7 @@ const LoginForm = function LoginForm() {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <form onSubmit={handleSubmit(onSubmit)} className="form-container">
         <h2 className="form-title">Форма входу</h2>
         <div className="form-group">
           <label className="form-label">Електронна пошта</label>

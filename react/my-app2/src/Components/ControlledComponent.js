@@ -8,21 +8,24 @@ const ControlledComponent = function ControlledComponent() {
   //(inputValue) і функцію оновлення стану (setInputValue).
 
     const handleChange = (event) => {
+        console.log("event", event);
     setInputValue(event.target.value);
     };
+
+    
 
   //Проп value встановлює початкове значення вхідного елемента на значення inputValue.
 
     return (
-    <form>
-    <label>
-        Input Value:
-        <input type="text" value={inputValue} onChange={handleChange} />
+    <form className="form">
+    <label className="label">
+        Вхідне значення:
+        <input type="text" value={inputValue} onChange={handleChange} className="input" />
         {/* onChangeподія обробляє зміни, внесені до вхідного значення. Функція handleChangeоновлює 
         inputValueстан новим значенням елемента введення, і оновлене значення негайно відображається 
         в стані та відображається на екрані. */}
     </label>
-    <p>Input Value: {inputValue}</p>
+    <p className="output">Вхідне значення: {inputValue}</p>
     </form>
     );
 };

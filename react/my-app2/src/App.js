@@ -6,6 +6,7 @@ import UserName from './Components/UserName'
 import LoginForm from './Components/LoginForm';
 import './Components/LoginForm.css';
 import ControlledComponent from './Components/ControlledComponent';
+import './Components/ControlledComponent.css'
 
 
 function App() { //Компонент App визначається як функція
