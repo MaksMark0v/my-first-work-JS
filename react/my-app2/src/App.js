@@ -3,10 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import UserName from './Components/UserName'
-import LoginForm from './Components/LoginForm';
-import './Components/LoginForm.css';
-import ControlledComponent from './Components/ControlledComponent';
-import './Components/ControlledComponent.css'
+import LoginForm from './Components/LoginForm/LoginForm';
+import './Components/LoginForm/LoginForm.css';
+import ControlledComponent from './Components/ControlledComponent/ControlledComponent';
+import './Components/ControlledComponent/ControlledComponent.css'
 
 
 function App() { //Компонент App визначається як функція
