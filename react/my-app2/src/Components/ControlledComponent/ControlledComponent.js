@@ -1,6 +1,7 @@
 // Керовані компоненти в React
 //https://www.freecodecamp.org/news/how-to-build-forms-in-react/
 
+import React from "react";
 import { useState } from "react";
 
 const ControlledComponent = function ControlledComponent() {

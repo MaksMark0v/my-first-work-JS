@@ -1,0 +1,47 @@
+//https://www.freecodecamp.org/news/how-to-add-eslint-to-your-react-project/
+
+{
+  // Налаштування середовища
+  "env": {
+    // Код буде виконуватися в браузерному середовищі
+    "browser": true,
+    // Код буде виконуватися з підтримкою ECMAScript 2021
+    "es2021": true
+  },
+
+  // Розширення конфігурації за допомогою інших файлів конфігурації
+  "extends": [
+    // Включає рекомендовані правила з ESLint
+    "eslint:all",
+    // Включає рекомендовані правила з плагіна React
+    "plugin:react/all",
+    // Включає рекомендовані правила з плагіна React Hooks
+    "plugin:react-hooks/recommended"
+  ],
+
+  // Налаштування парсера
+  "parserOptions": {
+    // Версія ECMAScript для парсингу коду
+    "ecmaVersion": 12,
+    // Тип джерельного коду (модуль ES)
+    "sourceType": "module",
+    // Додаткові функції ECMAScript, які визнавати (JSX)
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
+  // Плагіни, які використовуються в проєкті
+  "plugins": [
+    // Плагін React
+    "react",
+    // Плагін React Hooks
+    "react-hooks"
+  ],
+
+  // Налаштування правил
+  "rules": {
+    "capitalized-comments": "off"
+    // Тут можуть бути додані налаштування правил або перевизначені існуючі
+  }
+}

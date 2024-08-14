@@ -8,7 +8,6 @@ import './Components/LoginForm/LoginForm.css';
 import ControlledComponent from './Components/ControlledComponent/ControlledComponent';
 import './Components/ControlledComponent/ControlledComponent.css'
 
-
 function App() { //Компонент App визначається як функція
   // Усередині компонента App ми визначаємо змінну 
   //стану userName за допомогою хука useState:

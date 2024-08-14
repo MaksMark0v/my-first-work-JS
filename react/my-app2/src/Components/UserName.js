@@ -4,6 +4,7 @@
 import React from 'react';
 
 // Визначення функціонального компонента UserName
+// eslint-disable-next-line react/prop-types
 const UserName = ({ userName, onChange }) => {
     // Функція повертає JSX-елемент, який відображає поле вводу імені користувача 
     return (

@@ -1,3 +1,4 @@
+import React from "react";
 import { useForm } from "react-hook-form";
 
 const LoginForm = function LoginForm() {
@@ -27,7 +28,9 @@ const LoginForm = function LoginForm() {
             })}
             className="form-input"
           />
-          {errors.email && <div className="error-message">Невірна електронна пошта</div>}
+          {errors.email && (
+            <div className="error-message">Невірна електронна пошта</div>
+          )}
         </div>
         <button type="submit" className="submit-button">
           Вхід
