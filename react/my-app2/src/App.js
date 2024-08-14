@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import UserName from './Components/UserName'
 import LoginForm from './Components/LoginForm';
 import './Components/LoginForm.css';
+import ControlledComponent from './Components/ControlledComponent';
 
 
 function App() { //Компонент App визначається як функція
@@ -38,6 +39,7 @@ function App() { //Компонент App визначається як функ
           Learn React
         </a>
         <LoginForm />
+        <ControlledComponent />
       </header>
     </div>
   );
