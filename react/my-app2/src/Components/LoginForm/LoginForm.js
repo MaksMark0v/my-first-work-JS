@@ -11,7 +11,7 @@ const LoginForm = function LoginForm() {
 
   // Функція, яка виконується при відправці форми
   const onSubmit = (data) => {
-    console.log(data); // Виводимо дані з форми у консоль
+    console.log(1, data); // Виводимо дані з форми у консоль
   };
 
   return (

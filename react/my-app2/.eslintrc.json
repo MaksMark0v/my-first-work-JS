@@ -12,9 +12,9 @@
   // Розширення конфігурації за допомогою інших файлів конфігурації
   "extends": [
     // Включає рекомендовані правила з ESLint
-    "eslint:all",
+    "eslint:recommended",
     // Включає рекомендовані правила з плагіна React
-    "plugin:react/all",
+    "plugin:react/recommended",
     // Включає рекомендовані правила з плагіна React Hooks
     "plugin:react-hooks/recommended"
   ],
