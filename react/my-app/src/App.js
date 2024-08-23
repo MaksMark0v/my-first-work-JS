@@ -1,9 +1,12 @@
 import React from "react";
+import Img from './views/ImgNASA';
 
 
 function App() {
   return (
-    <div ></div>
+    <div >
+      <Img />
+    </div>
   );
 }
 
