@@ -1,5 +1,5 @@
 import React from "react";
-import Img from './views/ImgNASA';
+import Img from './views/ImgNASA/ImgNASA';
 
 
 
