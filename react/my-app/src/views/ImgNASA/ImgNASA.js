@@ -41,7 +41,7 @@ function NasaImages() {
           {/* Перебираємо масив зображень та рендеримо картку для кожного зображення */}
           {images.map((image, index) => (
             <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div className="card">
+              <div className="card shadow">
                 <img
                   className="card-img-top h-210 object-fit-cover "
                   src={
