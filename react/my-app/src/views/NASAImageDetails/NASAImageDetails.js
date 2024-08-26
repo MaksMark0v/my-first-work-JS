@@ -23,18 +23,18 @@ const NASAImageDetails = () => {
 
 
     return (
-        <div>
-            <h2 className="text-center">NASA Image Details</h2>
+        <div className="bg-light"> 
+            <h2 className="text-center text-primary">NASA Image Details</h2> 
             {isLoading ? (
                 <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
+                    <div className="spinner-border text-secondary" role="status"> 
                         <span className="visually-hidden">Завантаження...</span>
                     </div>
                 </div>
             ) : (
                 <div className='container'>
                     <img
-                        className="w-100"
+                        className="w-100 img-fluid rounded"
                         src={
                             image.length > 0 &&
                             image[0].links &&
@@ -42,11 +42,11 @@ const NASAImageDetails = () => {
                             image[0].links[0].href.replace('~thumb', '~large')
                         }
                     />
-                    <h3 className="text-xl-end">
+                    <h3 className="text-xl-end text-dark"> 
                         {image.length > 0 &&
                             image[0].data[0].title}
                     </h3>
-                    <p className="text-start fs-3 fw-semibold lh-lg">
+                    <p className="text-start fs-3 fw-semibold lh-lg text-muted"> 
                         {image.length > 0 &&
                             image[0].data[0].description}
                     </p>
