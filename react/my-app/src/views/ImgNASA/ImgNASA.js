@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react'; // Імпортуємо Reac
 import {Link} from 'react-router-dom';
 import KeywordsBadges from '../../Components/KeywordsBadges/KeywordsBadges';
 
+import NASA_IMAGE_API from '../../constants';
 import './ImgNASA.css'
 
-const NASA_IMAGE_API = 'https://images-api.nasa.gov/search?q=mars'; // Константа з URL API NASA для пошуку зображень Марса
+
 
 function NasaImages() {
   // Функціональний компонент NasaImages
   const [images, setImages] = useState([]); // Створили стан images, який є порожнім масивом, та функцію setImages для оновлення цього стану
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Хук useEffect, який виконується при монтуванні компонента
     async function fetchNasaImages() {
       // Асинхронна функція для отримання зображень з API NASA
-      const response = await fetch(NASA_IMAGE_API); // Відправляємо запит до API NASA
+      const response = await fetch(`${NASA_IMAGE_API}?q=mars`); // Відправляємо запит до API NASA
       const data = await response.json(); // Перетворюємо відповідь на JSON
       setIsLoading(false);
       setImages(data.collection.items); // Оновлюємо стан images отриманими даними
@@ -25,7 +26,7 @@ function NasaImages() {
 
   return (
     // Повертаємо JSX-елемент
-    <div className="conteiner">
+    <div className="container">
       <h1 className="d-flex justify-content-center text-info">
         Зображення NASA
       </h1>
@@ -61,7 +62,7 @@ function NasaImages() {
                     {image.data && image.data[0] && image.data[0].description}
                     {/* Опис зображення */}
                   </p>
-                  <Link to={'/details'}>Details</Link>
+                  <Link to={`/details/${image.data[0].nasa_id}`}>Details</Link>
                 </div>
               </div>
             </div>
