@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; // Імпортуємо React та два його хуки: useState та useEffect
-
+import {Link} from 'react-router-dom';
 import KeywordsBadges from '../../Components/KeywordsBadges/KeywordsBadges';
 
 import './ImgNASA.css'
@@ -61,6 +61,7 @@ function NasaImages() {
                     {image.data && image.data[0] && image.data[0].description}
                     {/* Опис зображення */}
                   </p>
+                  <Link to={'/details'}>Details</Link>
                 </div>
               </div>
             </div>
