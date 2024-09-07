@@ -1,4 +1,4 @@
 
-const ImageGalleryAPI = 'https://picsum.photos/'
+const ImageGalleryAPI = 'https://picsum.photos/v2/list'
 
 export default ImageGalleryAPI
