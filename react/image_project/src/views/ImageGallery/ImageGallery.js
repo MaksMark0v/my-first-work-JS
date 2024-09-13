@@ -1,20 +1,20 @@
-// ImageGallery.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 import ImageGalleryAPI from '../../constants';
 import './ImageGallery.css';
 import ImageDetails from '../ImageDetails/ImageDetails';
 import Pagination from '../../Components/Pagination/Pagination';
 
+import CommentForm from '../../Components/CommentForm/CommentForm';
+
 const ImageGallery = () => {
     const [images, setImages] = useState([]);
     const [flipped, setFlipped] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
+    const [showCommentForm, setShowCommentForm] = useState(false);
     const imagesPerPage = 3;
 
     useEffect(() => {
@@ -40,6 +40,15 @@ const ImageGallery = () => {
     const indexOfFirstImage = indexOfLastImage - imagesPerPage;
     const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
+    const onCommentSubmit = (comment) => {
+        console.log('Comment submitted:', comment);
+        // Додайте логіку для обробки коментаря
+    };
+
+    const toggleCommentForm = () => {
+        setShowCommentForm(!showCommentForm);
+    };
+
     return (
         <div>
             <div className="container">
@@ -50,8 +59,8 @@ const ImageGallery = () => {
                             className={`col-md-4 mb-4 image-item ${flipped[image.id] ? 'flipped' : ''}`}
                             onClick={() => handleFlip(image.id)}
                         >
-                            <div className="card ">
-                                <div className="card-front ">
+                            <div className="card">
+                                <div className="card-front">
                                     <img src={`https://picsum.photos/id/${image.id}/400/400`} className="card-img-top" alt={image.author} />
                                 </div>
                                 {flipped[image.id] && <ImageDetails image={image} />}
@@ -59,14 +68,18 @@ const ImageGallery = () => {
                         </div>
                     ))}
                 </div>
-
             </div>
             <Pagination
                 imagesPerPage={imagesPerPage}
                 totalImages={images.length}
                 currentPage={currentPage}
                 paginate={paginate}
-            /></div>
+            />
+            <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
+                {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
+            </button>
+            {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
+        </div>
     );
 };
 
