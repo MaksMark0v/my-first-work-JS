@@ -1,27 +1,26 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import ImageDetails from '../views/ImageDetails/ImageDetails';
+import ImageGallery from '../views/ImageGallery/ImageGallery';
 import ImageDetailsPage from '../views/ImageDetailsPage/ImageDetailsPage';
 
-
-const AppRouter = createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: '/',
-        element : <ImageDetails />
-    
+        element: <ImageGallery />
     },
     {
         path: '/image/:id',
-        element : <ImageDetailsPage />
-        // component: ImageDetailsPage
+        element: <ImageDetailsPage />
     },
     {
         path: '*',
-        component: () => <div>Page Not Found</div>
+        element: <div>Page Not Found</div>
     }
- //...more routes here if needed
-]) 
+]);
 
+const AppRouter = () => {
+    return <RouterProvider router={router} />;
+};
 
 export default AppRouter;
