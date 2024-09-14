@@ -1,13 +1,14 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import ImageGallery from '../views/ImageGallery/ImageGallery';
+import ImageDetails from '../views/ImageDetails/ImageDetails';
 import ImageDetailsPage from '../views/ImageDetailsPage/ImageDetailsPage';
+
 
 const AppRouter = createBrowserRouter([
     {
         path: '/',
-        element : <ImageGallery />
+        element : <ImageDetails />
     
     },
     {
