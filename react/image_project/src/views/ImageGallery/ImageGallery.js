@@ -5,13 +5,13 @@ import ImageGalleryAPI from '../../constants';
 import './ImageGallery.css';
 import ImageDetails from '../ImageDetails/ImageDetails';
 import Pagination from '../../Components/Pagination/Pagination';
-import CommentForm from '../../Components/CommentForm/CommentForm';
+// import CommentForm from '../../Components/CommentForm/CommentForm';
 
 const ImageGallery = () => {
     const [images, setImages] = useState([]);
     const [flipped, setFlipped] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
-    const [showCommentForm, setShowCommentForm] = useState(false);
+    // const [showCommentForm, setShowCommentForm] = useState(false);
     const imagesPerPage = 3;
 
     useEffect(() => {
@@ -38,14 +38,14 @@ const ImageGallery = () => {
     const indexOfFirstImage = indexOfLastImage - imagesPerPage;
     const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
-    const onCommentSubmit = (comment) => {
-        console.log('Comment submitted:', comment);
-        // Додайте логіку для обробки коментаря
-    };
+    // const onCommentSubmit = (comment) => {
+    //     console.log('Comment submitted:', comment);
+    //     // Додайте логіку для обробки коментаря
+    // };
 
-    const toggleCommentForm = () => {
-        setShowCommentForm(!showCommentForm);
-    };
+    // const toggleCommentForm = () => {
+    //     setShowCommentForm(!showCommentForm);
+    // };
 
 
     return (
@@ -78,10 +78,10 @@ const ImageGallery = () => {
                 currentPage={currentPage}
                 paginate={paginate}
             />
-            <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
+            {/* <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
                                             {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
                                         </button>
-            {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
+            {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />} */}
 
         </div>
     );
