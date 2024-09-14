@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import ImageGalleryAPI from '../../constants';
 import './ImageGallery.css';
 import ImageDetails from '../ImageDetails/ImageDetails';
 import Pagination from '../../Components/Pagination/Pagination';
-
 import CommentForm from '../../Components/CommentForm/CommentForm';
 
 const ImageGallery = () => {
@@ -33,6 +30,7 @@ const ImageGallery = () => {
     const handleFlip = (id) => {
         setFlipped(prevState => ({ ...prevState, [id]: !prevState[id] }));
     };
+    
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -49,6 +47,7 @@ const ImageGallery = () => {
         setShowCommentForm(!showCommentForm);
     };
 
+
     return (
         <div>
             <div className="container">
@@ -63,7 +62,13 @@ const ImageGallery = () => {
                                 <div className="card-front">
                                     <img src={`https://picsum.photos/id/${image.id}/400/400`} className="card-img-top" alt={image.author} />
                                 </div>
-                                {flipped[image.id] && <ImageDetails image={image} />}
+                                {flipped[image.id] && (
+                                    <ImageDetails image={image}>
+                                        <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
+                                            {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
+                                        </button>
+                                    </ImageDetails>
+                                )}
                             </div>
                         </div>
                     ))}
@@ -75,10 +80,8 @@ const ImageGallery = () => {
                 currentPage={currentPage}
                 paginate={paginate}
             />
-            <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
-                {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
-            </button>
             {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
+
         </div>
     );
 };

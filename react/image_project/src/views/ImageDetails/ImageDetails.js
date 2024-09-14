@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ImageDetails = ({ image }) => {
+const ImageDetails = ({ image, children }) => {
     return (
 
         <div className="card-back">
@@ -16,8 +16,11 @@ const ImageDetails = ({ image }) => {
                 <p className="card-text">Download: <a href={`https://picsum.photos/id/${image.id}/1080/1920`} target="_blank" rel="noopener noreferrer">Click here</a></p>
                 {/* <p className="card-text">URL: <a href={image.url} target="_blank" rel="noopener noreferrer">{image.url}</a></p> */}
 
+                {children}
+
 
             </div>
+            
 
         </div>
 
