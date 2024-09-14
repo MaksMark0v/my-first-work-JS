@@ -64,9 +64,7 @@ const ImageGallery = () => {
                                 </div>
                                 {flipped[image.id] && (
                                     <ImageDetails image={image}>
-                                        <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
-                                            {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
-                                        </button>
+                                    
                                     </ImageDetails>
                                 )}
                             </div>
@@ -80,6 +78,9 @@ const ImageGallery = () => {
                 currentPage={currentPage}
                 paginate={paginate}
             />
+            <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
+                                            {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
+                                        </button>
             {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
 
         </div>
