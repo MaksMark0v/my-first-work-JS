@@ -7,6 +7,7 @@ import ImageGalleryAPI from '../../constants';
 import CommentForm from '../../Components/CommentForm/CommentForm';
 
 
+
 const ImageDetailsPage = () => {
     const { id } = useParams();
     // null видає помилку
@@ -41,16 +42,19 @@ const ImageDetailsPage = () => {
 
     return (
         <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <img src={`https://picsum.photos/id/${id}/400/400`} className="card-img-top" alt={image.author} />
-                        <div className="card-body">
-                            <h5 className="card-title">{image.author}</h5>
-
+            <div className="row m-5 justify-content-center">
+                <div className="col-md-5 ">
+                    <div className="row g-0 mx-auto shadow-lg">
+                        {/* не "image.id" */}
+                        
+                                <img src={`https://picsum.photos/id/${id}/800/800`} className="img-fluid rounded-start" alt={image.author} />
+                            
+                        <div className="card-body ">
+                        <div className="card-body text-center">
                             <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
                                 {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
                             </button>
+                            </div>
                             {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
                         </div>
                     </div>

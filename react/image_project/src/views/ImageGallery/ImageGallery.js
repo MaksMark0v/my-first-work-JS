@@ -60,7 +60,7 @@ const navigatDetails = (id, event) => {
     return (
         <div>
             <div className="container">
-                <div className="row justify-content-center">
+                <div className="row m-5 justify-content-center">
                     {currentImages.map(image => (
                         <div
                             key={image.id}
@@ -69,7 +69,7 @@ const navigatDetails = (id, event) => {
                         >
                             <div className="card">
                                 <div className="card-front">
-                                    <img src={`https://picsum.photos/id/${image.id}/400/400`} className="card-img-top" alt={image.author} />
+                                    <img src={`https://picsum.photos/id/${image.id}/400/400`} className="card-img-top " alt={image.author} />
                                 </div>
                                 {flipped[image.id] && (
                                     <ImageDetails image={image}>

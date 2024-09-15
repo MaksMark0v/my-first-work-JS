@@ -1,4 +1,3 @@
-// CommentForm.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,7 +6,7 @@ const CommentForm = ({ onSubmit }) => {
     const [comment, setComment] = useState('');
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(null);
-    const [gender, setGender] = useState(''); // Add a state for gender
+    const [gender, setGender] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,12 +14,12 @@ const CommentForm = ({ onSubmit }) => {
             setEmailError('Invalid email address');
             return;
         }
-        console.log(`Name: ${name}, Comment: ${comment}, Email: ${email}, Gender: ${gender}`); // Log data to console
-        onSubmit({ name, comment, email, gender }); // Pass gender to onSubmit
+        console.log(`Name: ${name}, Comment: ${comment}, Email: ${email}, Gender: ${gender}`);
+        onSubmit({ name, comment, email, gender });
         setName('');
         setComment('');
         setEmail('');
-        setGender(''); // Reset gender state
+        setGender('');
     };
 
     const validateEmail = (email) => {
@@ -29,9 +28,9 @@ const CommentForm = ({ onSubmit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mt-4">
-            <div className="form-group">
-                <label htmlFor="name">Name</label>
+        <form onSubmit={handleSubmit} className="mt-4 p-4 border rounded bg-light">
+            <div className="form-group mb-3">
+                <label htmlFor="name" className="form-label">Name</label>
                 <input
                     type="text"
                     className="form-control"
@@ -41,8 +40,8 @@ const CommentForm = ({ onSubmit }) => {
                     required
                 />
             </div>
-            <div className="form-group">
-                <label htmlFor="comment">Comment</label>
+            <div className="form-group mb-3">
+                <label htmlFor="comment" className="form-label">Comment</label>
                 <textarea
                     className="form-control"
                     id="comment"
@@ -52,8 +51,8 @@ const CommentForm = ({ onSubmit }) => {
                     required
                 ></textarea>
             </div>
-            <div className="form-group">
-                <label htmlFor="email">Email</label>
+            <div className="form-group mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
                 <input
                     type="email"
                     className="form-control"
@@ -64,8 +63,8 @@ const CommentForm = ({ onSubmit }) => {
                 />
                 {emailError && <div className="text-danger">{emailError}</div>}
             </div>
-            <div className="form-group">
-                <label>Gender</label>
+            <div className="form-group mb-3">
+                <label className="form-label">Gender</label>
                 <div className="form-check">
                     <input
                         type="radio"
