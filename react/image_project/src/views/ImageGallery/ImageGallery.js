@@ -5,6 +5,7 @@ import ImageGalleryAPI from '../../constants';
 import './ImageGallery.css';
 import ImageDetails from '../ImageDetails/ImageDetails';
 import Pagination from '../../Components/Pagination/Pagination';
+import { useNavigate } from 'react-router-dom';
 // import CommentForm from '../../Components/CommentForm/CommentForm';
 
 const ImageGallery = () => {
@@ -13,6 +14,7 @@ const ImageGallery = () => {
     const [currentPage, setCurrentPage] = useState(1);
     // const [showCommentForm, setShowCommentForm] = useState(false);
     const imagesPerPage = 3;
+
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -27,6 +29,13 @@ const ImageGallery = () => {
         fetchImages();
     }, []);
 
+
+const navigate = useNavigate();
+const navigatDetails = (id, event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    return  navigate(`/image/${id}`);
+};
     const handleFlip = (id) => {
         setFlipped(prevState => ({ ...prevState, [id]: !prevState[id] }));
     };
@@ -64,6 +73,9 @@ const ImageGallery = () => {
                                 </div>
                                 {flipped[image.id] && (
                                     <ImageDetails image={image}>
+                                        {/* <Link to={`/image/${image.id}`}> Click </Link>>  */}
+                                        <button onClick = { (event) => navigatDetails(image.id, event) } className = 'btn btn-primary' >click</button> 
+                                
                                     
                                     </ImageDetails>
                                 )}

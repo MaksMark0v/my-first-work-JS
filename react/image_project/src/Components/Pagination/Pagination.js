@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 // Pagination.js
 import React from 'react';
@@ -28,19 +29,19 @@ const Pagination = ({ imagesPerPage, totalImages, currentPage, paginate }) => {
         <div className=''>
             <ul className='pagination justify-content-center'>
                 <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                    <a onClick={() => paginate(currentPage - 1)} href="!#" className="page-link">
+                    <a onClick={() => paginate(currentPage - 1)} role='button' className="page-link">
                     Previous
                     </a>
                 </li>
                 {pageNumbers.slice(startPage - 1, endPage).map(number => (
                     <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
-                        <a onClick={() => paginate(number)} href="!#" className="page-link">
+                        <a onClick={() => paginate(number)} role='button' className="page-link">
                             {number}
                         </a>
                     </li>
                 ))}
                 <li className={`page-item ${currentPage === pageNumbers.length ? 'disabled' : ''}`}>
-                    <a onClick={() => paginate(currentPage + 1)} href="!#" className="page-link">
+                    <a onClick={() => paginate(currentPage + 1)} role='button' className="page-link">
                     Next
                     </a>
                 </li>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter} from 'react-router-dom';
 
 import ImageGallery from '../views/ImageGallery/ImageGallery';
 import ImageDetailsPage from '../views/ImageDetailsPage/ImageDetailsPage';
 
-const router = createBrowserRouter([
+const AppRouter = createBrowserRouter([
     {
         path: '/',
         element: <ImageGallery />
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
     }
 ]);
 
-const AppRouter = () => {
-    return <RouterProvider router={router} />;
-};
+// const AppRouter = () => {
+//     return <RouterProvider router={router} />;
+// };
 
 export default AppRouter;

@@ -9,7 +9,8 @@ import CommentForm from '../../Components/CommentForm/CommentForm';
 
 const ImageDetailsPage = () => {
     const { id } = useParams();
-    const [image, setImage] = useState(null);
+    // null видає помилку
+    const [image, setImage] = useState(true); 
     const [showCommentForm, setShowCommentForm] = useState(false);
 
     useEffect(() => {
@@ -21,8 +22,9 @@ const ImageDetailsPage = () => {
                 console.error('Error fetching image:', error);
             }
         };
-
+// console.log(234)
         fetchImage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     const toggleCommentForm = () => {
@@ -31,6 +33,7 @@ const ImageDetailsPage = () => {
 
     const onCommentSubmit = (comment) => {
         console.log('Comment submitted:', comment);
+        console.log(234)
         // Додайте логіку для обробки коментаря
     };
 
@@ -41,7 +44,7 @@ const ImageDetailsPage = () => {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <img src={`https://picsum.photos/id/${image.id}/800/800`} className="card-img-top" alt={image.author} />
+                        <img src={`https://picsum.photos/id/${id}/400/400`} className="card-img-top" alt={image.author} />
                         <div className="card-body">
                             <h5 className="card-title">{image.author}</h5>
 
