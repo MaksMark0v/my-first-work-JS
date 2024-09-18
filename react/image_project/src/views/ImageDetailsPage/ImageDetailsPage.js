@@ -35,6 +35,7 @@ const ImageDetailsPage = () => {
             <div className="row m-5 justify-content-center">
                 <div className="col-md-5">
                     <div className="row g-0 p-1 mx-auto shadow-lg">
+                        
                         {data.download_url && (
                             <img src={data.download_url} alt={data.author} className="img-fluid" />
                         )}
@@ -45,8 +46,8 @@ const ImageDetailsPage = () => {
                             <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
                                 {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
                             </button>
+                            </div>
                             {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
-                        </div>
                     </div>
                 </div>
             </div>
