@@ -1,31 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ImageGalleryAPI from '../../constants';
 import CommentForm from '../../Components/CommentForm/CommentForm';
-
-
+import { ImageGalleryPage } from '../../constants';
 
 const ImageDetailsPage = () => {
     const { id } = useParams();
-    // null видає помилку
-    const [image, setImage] = useState(true); 
+    const [data, setData] = useState({});
     const [showCommentForm, setShowCommentForm] = useState(false);
 
     useEffect(() => {
         const fetchImage = async () => {
             try {
-                const response = await axios.get(`${ImageGalleryAPI}/${id}`);
-                setImage(response.data);
+                const response = await axios.get(`${ImageGalleryPage}/id/${id}/info`);
+                setData(response.data);
             } catch (error) {
                 console.error('Error fetching image:', error);
             }
         };
-// console.log(234)
         fetchImage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     const toggleCommentForm = () => {
@@ -34,27 +28,23 @@ const ImageDetailsPage = () => {
 
     const onCommentSubmit = (comment) => {
         console.log('Comment submitted:', comment);
-        console.log(234)
-        // Додайте логіку для обробки коментаря
     };
-
-    if (!image) return <div>Loading...</div>;
 
     return (
         <div className="container">
             <div className="row m-5 justify-content-center">
-                <div className="col-md-5 ">
-                    <div className="row g-0 mx-auto shadow-lg">
-                        {/* не "image.id" */}
-                        
-                                <img src={`https://picsum.photos/id/${id}/800/800`} className="img-fluid rounded-start" alt={image.author} />
-                            
-                        <div className="card-body ">
+                <div className="col-md-5">
+                    <div className="row g-0 p-1 mx-auto shadow-lg">
+                        {data.download_url && (
+                            <img src={data.download_url} alt={data.author} className="img-fluid" />
+                        )}
                         <div className="card-body text-center">
+                            <h5 className="card-title">{data.author}</h5>
+                            <p className="card-text">Width: {data.width}px</p>
+                            <p className="card-text">Height: {data.height}px</p>
                             <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
                                 {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
                             </button>
-                            </div>
                             {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />}
                         </div>
                     </div>

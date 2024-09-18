@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ImageGalleryAPI from '../../constants';
+import {ImageGalleryAPI} from '../../constants';
 import './ImageGallery.css';
 import ImageDetails from '../ImageDetails/ImageDetails';
 import Pagination from '../../Components/Pagination/Pagination';
 import { useNavigate } from 'react-router-dom';
-// import CommentForm from '../../Components/CommentForm/CommentForm';
+import { ImageGalleryPage } from '../../constants';
 
 const ImageGallery = () => {
     const [images, setImages] = useState([]);
     const [flipped, setFlipped] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
-    // const [showCommentForm, setShowCommentForm] = useState(false);
     const imagesPerPage = 3;
 
 
@@ -47,14 +46,6 @@ const navigatDetails = (id, event) => {
     const indexOfFirstImage = indexOfLastImage - imagesPerPage;
     const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
-    // const onCommentSubmit = (comment) => {
-    //     console.log('Comment submitted:', comment);
-    //     // Додайте логіку для обробки коментаря
-    // };
-
-    // const toggleCommentForm = () => {
-    //     setShowCommentForm(!showCommentForm);
-    // };
 
 
     return (
@@ -69,14 +60,12 @@ const navigatDetails = (id, event) => {
                         >
                             <div className="card">
                                 <div className="card-front">
-                                    <img src={`https://picsum.photos/id/${image.id}/400/400`} className="card-img-top " alt={image.author} />
+                                    <img src={`${ImageGalleryPage}/id/${image.id}/400/400`} className="card-img-top " alt={image.author} />
                                 </div>
                                 {flipped[image.id] && (
                                     <ImageDetails image={image}>
                                         {/* <Link to={`/image/${image.id}`}> Click </Link>>  */}
-                                        <button onClick = { (event) => navigatDetails(image.id, event) } className = 'btn btn-primary' >click</button> 
-                                
-                                    
+                                        <button onClick = { (event) => navigatDetails(image.id, event) } className = 'btn btn-primary' >click</button>                                 
                                     </ImageDetails>
                                 )}
                             </div>
@@ -90,10 +79,6 @@ const navigatDetails = (id, event) => {
                 currentPage={currentPage}
                 paginate={paginate}
             />
-            {/* <button onClick={toggleCommentForm} className="btn btn-secondary mt-2">
-                                            {showCommentForm ? 'Hide Comment Form' : 'Show Comment Form'}
-                                        </button>
-            {showCommentForm && <CommentForm onSubmit={onCommentSubmit} />} */}
 
         </div>
     );
