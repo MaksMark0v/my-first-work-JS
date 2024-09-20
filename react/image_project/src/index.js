@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import AppRouter from './router/AppRouter';
+// index.js
+// require('@dotenvx/dotenvx').config()
+
+console.log(`Hello ${process.env.HELLO}`)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
