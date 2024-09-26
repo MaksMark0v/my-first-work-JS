@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSearchParams } from 'react-router-dom';
 
 const Pagination = ({ imagesPerPage, totalImages, currentPage, paginate }) => {
+    const [searchParams, setSearchParams] = useSearchParams();
     const pageNumbers = []; // Масив для зберігання номерів сторінок
     const maxPageNumbersToShow = 5; // Максимальна кількість номерів сторінок для відображення
     const totalPages = Math.ceil(totalImages / imagesPerPage); // Загальна кількість сторінок
@@ -16,6 +18,11 @@ const Pagination = ({ imagesPerPage, totalImages, currentPage, paginate }) => {
     for (let i = startPage; i <= endPage; i++) {
         pageNumbers.push(i);
     }
+
+    // Оновлюємо query параметри при зміні поточної сторінки
+    useEffect(() => {
+        setSearchParams({ page: currentPage });
+    }, [currentPage, setSearchParams]);
 
     return (
         <div className=''>
