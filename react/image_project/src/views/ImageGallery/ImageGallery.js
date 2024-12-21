@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { ImageGalleryAPI } from '../../constants';
 import './ImageGallery.css';
 import ImageDetails from '../ImageDetails/ImageDetails';
