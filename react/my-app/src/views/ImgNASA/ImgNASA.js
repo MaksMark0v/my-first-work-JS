@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'; // Імпортуємо React та два його хуки: useState та useEffect
 import {Link} from 'react-router-dom';
 import KeywordsBadges from '../../Components/KeywordsBadges/KeywordsBadges';
-// import dotenv from 'dotenv';
-// import NASA_IMAGE_API from '../../constants';
+
 import './ImgNASA.css'
-// dotenv.config()
-// import 'dotenv/config';
-// eslint-disable-next-line no-undef
-// require('dotenv').config();
+
 
 // eslint-disable-next-line no-undef
 const API_KEY = process.env.REACT_APP_NASA_IMAGE_API;
