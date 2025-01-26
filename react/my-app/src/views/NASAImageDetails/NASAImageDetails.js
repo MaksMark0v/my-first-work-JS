@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import NASA_IMAGE_API from '../../constants'; // Константа з URL API NASA для пошуку зображень Марса
+// import NASA_IMAGE_API from '../../constants'; // Константа з URL API NASA для пошуку зображень Марса
 
-
+// eslint-disable-next-line no-undef
+const API_KEY = process.env.REACT_APP_NASA_IMAGE_API;
 const NASAImageDetails = () => {
     const { nasaId } = useParams();
     const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +13,7 @@ const NASAImageDetails = () => {
     useEffect(() => {
         async function fetchNasaImages() {
             // Асинхронна функція для отримання зображень з API NASA
-            const response = await fetch(`${NASA_IMAGE_API}?nasa_id=${nasaId}`);
+            const response = await fetch(`${API_KEY}?nasa_id=${nasaId}`);
             const data = await response.json(); // Перетворюємо відповідь на JSON
             setIsLoading(false);
             setImage(data.collection.items); // Оновлюємо стан images отриманими даними

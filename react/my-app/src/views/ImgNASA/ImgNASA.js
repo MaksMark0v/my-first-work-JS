@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'; // Імпортуємо React та два його хуки: useState та useEffect
 import {Link} from 'react-router-dom';
 import KeywordsBadges from '../../Components/KeywordsBadges/KeywordsBadges';
-
-import NASA_IMAGE_API from '../../constants';
+// import dotenv from 'dotenv';
+// import NASA_IMAGE_API from '../../constants';
 import './ImgNASA.css'
+// dotenv.config()
+// import 'dotenv/config';
+// eslint-disable-next-line no-undef
+// require('dotenv').config();
 
-
+// eslint-disable-next-line no-undef
+const API_KEY = process.env.REACT_APP_NASA_IMAGE_API;
 
 function NasaImages() {
   // Функціональний компонент NasaImages
@@ -16,7 +21,7 @@ function NasaImages() {
     // Хук useEffect, який виконується при монтуванні компонента
     async function fetchNasaImages() {
       // Асинхронна функція для отримання зображень з API NASA
-      const response = await fetch(`${NASA_IMAGE_API}?q=mars`); // Відправляємо запит до API NASA
+      const response = await fetch(`${API_KEY}?q=mars`); // Відправляємо запит до API NASA
       const data = await response.json(); // Перетворюємо відповідь на JSON
       setIsLoading(false);
       setImages(data.collection.items); // Оновлюємо стан images отриманими даними
